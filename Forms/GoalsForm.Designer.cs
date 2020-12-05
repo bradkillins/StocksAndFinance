@@ -1,7 +1,7 @@
 ﻿
 namespace StocksAndFinance.Forms
 {
-    partial class Budget
+    partial class GoalsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,33 +29,33 @@ namespace StocksAndFinance.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelBudgetMain = new System.Windows.Forms.Panel();
+            this.panelGoalsMain = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panelBudgetMain
+            // panelGoalsMain
             // 
-            this.panelBudgetMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBudgetMain.Location = new System.Drawing.Point(0, 0);
-            this.panelBudgetMain.Name = "panelBudgetMain";
-            this.panelBudgetMain.Size = new System.Drawing.Size(1200, 703);
-            this.panelBudgetMain.TabIndex = 0;
+            this.panelGoalsMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGoalsMain.Location = new System.Drawing.Point(0, 0);
+            this.panelGoalsMain.Name = "panelGoalsMain";
+            this.panelGoalsMain.Size = new System.Drawing.Size(1100, 619);
+            this.panelGoalsMain.TabIndex = 0;
             // 
-            // Budget
+            // Goals
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1200, 703);
-            this.Controls.Add(this.panelBudgetMain);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Budget";
-            this.Text = "Budget";
+            this.ClientSize = new System.Drawing.Size(1100, 619);
+            this.Controls.Add(this.panelGoalsMain);
+            this.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "Goals";
+            this.Text = "Goals";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelBudgetMain;
+        private System.Windows.Forms.Panel panelGoalsMain;
     }
 }

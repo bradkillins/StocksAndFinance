@@ -32,25 +32,28 @@ namespace StocksAndFinance.CustomControls
             this.lblBudgetItem = new System.Windows.Forms.Label();
             this.lblBudgetItemAmount = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.iconButtonEdit = new FontAwesome.Sharp.IconButton();
+            this.iconButtonDelete = new FontAwesome.Sharp.IconButton();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblBudgetItem
             // 
             this.lblBudgetItem.AutoSize = true;
-            this.lblBudgetItem.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudgetItem.Location = new System.Drawing.Point(11, 16);
+            this.lblBudgetItem.Font = new System.Drawing.Font("Garamond", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBudgetItem.Location = new System.Drawing.Point(12, 9);
             this.lblBudgetItem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBudgetItem.Name = "lblBudgetItem";
-            this.lblBudgetItem.Size = new System.Drawing.Size(227, 31);
+            this.lblBudgetItem.Size = new System.Drawing.Size(202, 27);
             this.lblBudgetItem.TabIndex = 0;
-            this.lblBudgetItem.Text = "Budget Item Title";
+            this.lblBudgetItem.Text = "Budget Item Title:";
             // 
             // lblBudgetItemAmount
             // 
             this.lblBudgetItemAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBudgetItemAmount.AutoSize = true;
             this.lblBudgetItemAmount.Font = new System.Drawing.Font("Garamond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudgetItemAmount.Location = new System.Drawing.Point(582, 19);
+            this.lblBudgetItemAmount.Location = new System.Drawing.Point(582, 9);
             this.lblBudgetItemAmount.Name = "lblBudgetItemAmount";
             this.lblBudgetItemAmount.Size = new System.Drawing.Size(110, 27);
             this.lblBudgetItemAmount.TabIndex = 1;
@@ -61,23 +64,69 @@ namespace StocksAndFinance.CustomControls
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.ForeColor = System.Drawing.Color.Green;
-            this.progressBar1.Location = new System.Drawing.Point(17, 60);
+            this.progressBar1.Location = new System.Drawing.Point(17, 48);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(766, 23);
+            this.progressBar1.Size = new System.Drawing.Size(766, 10);
             this.progressBar1.TabIndex = 2;
+            // 
+            // iconButtonEdit
+            // 
+            this.iconButtonEdit.FlatAppearance.BorderSize = 0;
+            this.iconButtonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonEdit.ForeColor = System.Drawing.Color.Transparent;
+            this.iconButtonEdit.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.iconButtonEdit.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.iconButtonEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonEdit.IconSize = 30;
+            this.iconButtonEdit.Location = new System.Drawing.Point(734, 0);
+            this.iconButtonEdit.Name = "iconButtonEdit";
+            this.iconButtonEdit.Size = new System.Drawing.Size(30, 30);
+            this.iconButtonEdit.TabIndex = 3;
+            this.iconButtonEdit.UseVisualStyleBackColor = true;
+            this.iconButtonEdit.MouseEnter += new System.EventHandler(this.MouseEnterChangeIconColor);
+            this.iconButtonEdit.MouseLeave += new System.EventHandler(this.MouseLeaveChangeIconColor);
+            // 
+            // iconButtonDelete
+            // 
+            this.iconButtonDelete.FlatAppearance.BorderSize = 0;
+            this.iconButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonDelete.ForeColor = System.Drawing.Color.Transparent;
+            this.iconButtonDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.iconButtonDelete.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.iconButtonDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonDelete.IconSize = 30;
+            this.iconButtonDelete.Location = new System.Drawing.Point(770, 0);
+            this.iconButtonDelete.Name = "iconButtonDelete";
+            this.iconButtonDelete.Size = new System.Drawing.Size(30, 30);
+            this.iconButtonDelete.TabIndex = 4;
+            this.iconButtonDelete.UseVisualStyleBackColor = true;
+            this.iconButtonDelete.MouseEnter += new System.EventHandler(this.MouseEnterChangeIconColor);
+            this.iconButtonDelete.MouseLeave += new System.EventHandler(this.MouseLeaveChangeIconColor);
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(215, 12);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(149, 22);
+            this.lblDescription.TabIndex = 5;
+            this.lblDescription.Text = "Short Description";
             // 
             // BudgetItem
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.iconButtonDelete);
+            this.Controls.Add(this.iconButtonEdit);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblBudgetItemAmount);
             this.Controls.Add(this.lblBudgetItem);
             this.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BudgetItem";
-            this.Size = new System.Drawing.Size(800, 100);
+            this.Size = new System.Drawing.Size(800, 75);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,5 +137,8 @@ namespace StocksAndFinance.CustomControls
         private System.Windows.Forms.Label lblBudgetItem;
         private System.Windows.Forms.Label lblBudgetItemAmount;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private FontAwesome.Sharp.IconButton iconButtonEdit;
+        private FontAwesome.Sharp.IconButton iconButtonDelete;
+        private System.Windows.Forms.Label lblDescription;
     }
 }

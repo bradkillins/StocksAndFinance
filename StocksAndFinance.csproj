@@ -36,15 +36,21 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp">
+      <HintPath>..\..\SODV2101_Rapid_Application_Development\AddressBook\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +60,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ApiHandler.cs" />
@@ -68,17 +75,23 @@
     <Compile Include="CustomControls\BudgetItem.Designer.cs">
       <DependentUpon>BudgetItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Budget.cs">
+    <Compile Include="Forms\BudgetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Budget.Designer.cs">
-      <DependentUpon>Budget.cs</DependentUpon>
+    <Compile Include="Forms\BudgetForm.Designer.cs">
+      <DependentUpon>BudgetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Goals.cs">
+    <Compile Include="Forms\CreateBudgetItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Goals.Designer.cs">
-      <DependentUpon>Goals.cs</DependentUpon>
+    <Compile Include="Forms\CreateBudgetItemForm.Designer.cs">
+      <DependentUpon>CreateBudgetItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GoalsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GoalsForm.Designer.cs">
+      <DependentUpon>GoalsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Testing.cs">
       <SubType>Form</SubType>
@@ -92,11 +105,14 @@
     <EmbeddedResource Include="CustomControls\BudgetItem.resx">
       <DependentUpon>BudgetItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Budget.resx">
-      <DependentUpon>Budget.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\BudgetForm.resx">
+      <DependentUpon>BudgetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Goals.resx">
-      <DependentUpon>Goals.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CreateBudgetItemForm.resx">
+      <DependentUpon>CreateBudgetItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GoalsForm.resx">
+      <DependentUpon>GoalsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

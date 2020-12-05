@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StocksAndFinance.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace StocksAndFinance
         public Testing()
         {
             InitializeComponent();
+        }
+
+        private void Testing_Load(object sender, EventArgs e)
+        {
+            BudgetForm budget = new BudgetForm();
+            budget.Show();
         }
     }
 }
