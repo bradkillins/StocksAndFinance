@@ -53,7 +53,7 @@ namespace StocksAndFinance.CustomControls
             this.lblBudgetItemAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBudgetItemAmount.AutoSize = true;
             this.lblBudgetItemAmount.Font = new System.Drawing.Font("Garamond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudgetItemAmount.Location = new System.Drawing.Point(582, 9);
+            this.lblBudgetItemAmount.Location = new System.Drawing.Point(600, 9);
             this.lblBudgetItemAmount.Name = "lblBudgetItemAmount";
             this.lblBudgetItemAmount.Size = new System.Drawing.Size(110, 27);
             this.lblBudgetItemAmount.TabIndex = 1;
@@ -66,11 +66,12 @@ namespace StocksAndFinance.CustomControls
             this.progressBarBudget.ForeColor = System.Drawing.Color.Green;
             this.progressBarBudget.Location = new System.Drawing.Point(17, 48);
             this.progressBarBudget.Name = "progressBarBudget";
-            this.progressBarBudget.Size = new System.Drawing.Size(766, 10);
+            this.progressBarBudget.Size = new System.Drawing.Size(819, 10);
             this.progressBarBudget.TabIndex = 2;
             // 
             // iconButtonEdit
             // 
+            this.iconButtonEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonEdit.FlatAppearance.BorderSize = 0;
             this.iconButtonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonEdit.ForeColor = System.Drawing.Color.Transparent;
@@ -78,7 +79,7 @@ namespace StocksAndFinance.CustomControls
             this.iconButtonEdit.IconColor = System.Drawing.Color.WhiteSmoke;
             this.iconButtonEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonEdit.IconSize = 30;
-            this.iconButtonEdit.Location = new System.Drawing.Point(734, 0);
+            this.iconButtonEdit.Location = new System.Drawing.Point(784, 0);
             this.iconButtonEdit.Name = "iconButtonEdit";
             this.iconButtonEdit.Size = new System.Drawing.Size(30, 30);
             this.iconButtonEdit.TabIndex = 3;
@@ -88,6 +89,7 @@ namespace StocksAndFinance.CustomControls
             // 
             // iconButtonDelete
             // 
+            this.iconButtonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonDelete.FlatAppearance.BorderSize = 0;
             this.iconButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonDelete.ForeColor = System.Drawing.Color.Transparent;
@@ -95,7 +97,7 @@ namespace StocksAndFinance.CustomControls
             this.iconButtonDelete.IconColor = System.Drawing.Color.WhiteSmoke;
             this.iconButtonDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonDelete.IconSize = 30;
-            this.iconButtonDelete.Location = new System.Drawing.Point(770, 0);
+            this.iconButtonDelete.Location = new System.Drawing.Point(820, 0);
             this.iconButtonDelete.Name = "iconButtonDelete";
             this.iconButtonDelete.Size = new System.Drawing.Size(30, 30);
             this.iconButtonDelete.TabIndex = 4;
@@ -126,7 +128,7 @@ namespace StocksAndFinance.CustomControls
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BudgetItem";
-            this.Size = new System.Drawing.Size(800, 75);
+            this.Size = new System.Drawing.Size(853, 75);
             this.ResumeLayout(false);
             this.PerformLayout();
 

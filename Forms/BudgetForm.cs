@@ -14,16 +14,18 @@ namespace StocksAndFinance.Forms
 {
     public partial class BudgetForm : Form
     {
-        public BudgetForm()
-        {
-            InitializeComponent();
-        }
-        //List<Budget> BudgetData;
-        //public BudgetForm(User currentUser)
+        //public BudgetForm()
         //{
         //    InitializeComponent();
-        //    BudgetData = currntUser.Budgets;
         //}
+        List<Budget> BudgetData;
+        int xLocation = 10;
+        int yLocation = 10;
+        public BudgetForm(User currentUser)
+        {
+            InitializeComponent();
+            BudgetData = currentUser.Budgets;
+        }
 
         private void ChangeCreateItemColorOnMouseleave(object sender, EventArgs e)
         {
@@ -41,23 +43,23 @@ namespace StocksAndFinance.Forms
 
         private void BudgetForm_Load(object sender, EventArgs e)
         {
-            //Use this once user data is pasaed into BudgetForm
-            //foreach(Budget item in BudgetData)
-            //{
-            //    Budget currentBudget = new Budget();
-            //}
-            List<Budget> currentBudgetData = DbHandler.SelectBudgets(1);
-            Budget currentBudget = new Budget();
-            foreach (Budget item in currentBudgetData)
+            //Create a budget item user control for each of the current users budget items
+            foreach (Budget item in BudgetData)
             {
+                Budget currentBudget = item;
                 currentBudget.BudgetId = item.BudgetId;
                 currentBudget.Name = item.Name;
                 currentBudget.Description = item.Description;
                 currentBudget.TimePeriod = item.TimePeriod;
                 currentBudget.BudgetAmount = item.BudgetAmount;
                 currentBudget.UsedAmount = item.UsedAmount;
+                CreateBudgetItem(currentBudget);
             }
-            Point itemLocation = new Point(10, 10);
+        }
+
+        //Create BudgetItem Control
+        private void CreateBudgetItem(Budget currentBudget)
+        {
             BudgetItem budgetItem = new BudgetItem();
             budgetItem.lblTitle = currentBudget.Name;
             budgetItem.progressMax = currentBudget.BudgetAmount;
@@ -72,20 +74,11 @@ namespace StocksAndFinance.Forms
             {
                 budgetItem.lblDescrip = "";
             }
-
+            budgetItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             panelMain.Controls.Add(budgetItem);
-            budgetItem.Location = itemLocation;
-
-
-           // CreateBudgetItem();
-            
-            //separation of budgetitem controls once I'm looping through all budget items in list
-            //budgetItem.Location = new Point(itemLocation.X, itemLocation.Y+85);
-        }
-        //Create BudgetItem Control
-        private void CreateBudgetItem()
-        {
-
+            budgetItem.Location = new Point(xLocation, yLocation);
+            //space out the controls
+            yLocation += 85;
         }
     }
 }

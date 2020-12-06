@@ -45,7 +45,7 @@ namespace StocksAndFinance.Forms
             this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopBar.Location = new System.Drawing.Point(0, 0);
             this.panelTopBar.Name = "panelTopBar";
-            this.panelTopBar.Size = new System.Drawing.Size(842, 100);
+            this.panelTopBar.Size = new System.Drawing.Size(895, 100);
             this.panelTopBar.TabIndex = 0;
             // 
             // label1
@@ -53,7 +53,7 @@ namespace StocksAndFinance.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(412, 52);
+            this.label1.Location = new System.Drawing.Point(489, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 22);
             this.label1.TabIndex = 2;
@@ -62,7 +62,7 @@ namespace StocksAndFinance.Forms
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(498, 46);
+            this.comboBox1.Location = new System.Drawing.Point(571, 46);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(301, 33);
             this.comboBox1.TabIndex = 1;
@@ -94,14 +94,14 @@ namespace StocksAndFinance.Forms
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 100);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(842, 603);
+            this.panelMain.Size = new System.Drawing.Size(895, 503);
             this.panelMain.TabIndex = 1;
             // 
             // BudgetForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(842, 703);
+            this.ClientSize = new System.Drawing.Size(895, 603);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelTopBar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

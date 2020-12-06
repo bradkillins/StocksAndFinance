@@ -14,7 +14,7 @@ namespace StocksAndFinance
         [STAThread]
         static void Main()
         {
-            List<User> users = DbHandler.SelectAllUsers();
+           // List<User> users = DbHandler.SelectAllUsers();
 
             //Check out the users variable in debugging mode :)
 
