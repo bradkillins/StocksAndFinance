@@ -30,14 +30,11 @@ namespace StocksAndFinance.Forms
         private void InitializeComponent()
         {
             this.panelTopBar = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.iconButtonCreateBudgetItem = new FontAwesome.Sharp.IconButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.budgetItem2 = new StocksAndFinance.CustomControls.BudgetItem();
-            this.budgetItem1 = new StocksAndFinance.CustomControls.BudgetItem();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.iconButtonCreateBudgetItem = new FontAwesome.Sharp.IconButton();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelTopBar.SuspendLayout();
-            this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTopBar
@@ -51,16 +48,24 @@ namespace StocksAndFinance.Forms
             this.panelTopBar.Size = new System.Drawing.Size(842, 100);
             this.panelTopBar.TabIndex = 0;
             // 
-            // panelMain
+            // label1
             // 
-            this.panelMain.AutoScroll = true;
-            this.panelMain.Controls.Add(this.budgetItem2);
-            this.panelMain.Controls.Add(this.budgetItem1);
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 100);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(842, 603);
-            this.panelMain.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(412, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 22);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Sort By:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(498, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(301, 33);
+            this.comboBox1.TabIndex = 1;
             // 
             // iconButtonCreateBudgetItem
             // 
@@ -83,46 +88,14 @@ namespace StocksAndFinance.Forms
             this.iconButtonCreateBudgetItem.MouseEnter += new System.EventHandler(this.ChangeCreateItemColorOnMouseeEnter);
             this.iconButtonCreateBudgetItem.MouseLeave += new System.EventHandler(this.ChangeCreateItemColorOnMouseleave);
             // 
-            // comboBox1
+            // panelMain
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(498, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(301, 33);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(412, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Sort By:";
-            // 
-            // budgetItem2
-            // 
-            this.budgetItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.budgetItem2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.budgetItem2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.budgetItem2.Location = new System.Drawing.Point(10, 95);
-            this.budgetItem2.Margin = new System.Windows.Forms.Padding(4);
-            this.budgetItem2.Name = "budgetItem2";
-            this.budgetItem2.Size = new System.Drawing.Size(800, 75);
-            this.budgetItem2.TabIndex = 1;
-            // 
-            // budgetItem1
-            // 
-            this.budgetItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.budgetItem1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.budgetItem1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.budgetItem1.Location = new System.Drawing.Point(10, 10);
-            this.budgetItem1.Margin = new System.Windows.Forms.Padding(4);
-            this.budgetItem1.Name = "budgetItem1";
-            this.budgetItem1.Size = new System.Drawing.Size(800, 75);
-            this.budgetItem1.TabIndex = 0;
+            this.panelMain.AutoScroll = true;
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 100);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(842, 603);
+            this.panelMain.TabIndex = 1;
             // 
             // BudgetForm
             // 
@@ -135,9 +108,9 @@ namespace StocksAndFinance.Forms
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "BudgetForm";
             this.Text = "Budget";
+            this.Load += new System.EventHandler(this.BudgetForm_Load);
             this.panelTopBar.ResumeLayout(false);
             this.panelTopBar.PerformLayout();
-            this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -149,7 +122,5 @@ namespace StocksAndFinance.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private FontAwesome.Sharp.IconButton iconButtonCreateBudgetItem;
-        private CustomControls.BudgetItem budgetItem2;
-        private CustomControls.BudgetItem budgetItem1;
     }
 }

@@ -17,6 +17,74 @@ namespace StocksAndFinance.CustomControls
         {
             InitializeComponent();
         }
+        public string lblTitle
+        {
+            get
+            {
+                return lblBudgetItem.Text;
+            }
+            set
+            {
+                lblBudgetItem.Text = value;
+            }
+        }
+        public string lblDescrip
+        {
+            get
+            {
+                return lblDescription.Text;
+            }
+            set
+            {
+                lblDescription.Text = value;
+            }
+        }
+        public double progressMin = 0.00;
+        
+        public double progressMax
+        {
+            get
+            {
+                return progressBarBudget.Maximum;
+            }
+            set
+            {
+                progressBarBudget.Maximum = (int)value;
+            }
+        }
+        public double progressValue
+        {
+            get
+            {
+                return progressBarBudget.Value;
+            }
+            set
+            {
+                progressBarBudget.Value = (int)value;
+            }
+        }
+        public string lblprogressValue
+        {
+            get
+            {
+                return lblBudgetItemAmount.Text;
+            }
+            set
+            {
+                lblBudgetItemAmount.Text = "$" + value.ToString() + " of $";
+            }
+        }
+        public string lblprogressMax
+        {
+            get
+            {
+                return lblBudgetItemAmount.Text;
+            }
+            set
+            {
+                lblBudgetItemAmount.Text += value.ToString();
+            }
+        }
 
         private void MouseEnterChangeIconColor(object sender, EventArgs e)
         {

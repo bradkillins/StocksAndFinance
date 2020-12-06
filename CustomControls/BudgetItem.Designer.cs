@@ -31,7 +31,7 @@ namespace StocksAndFinance.CustomControls
         {
             this.lblBudgetItem = new System.Windows.Forms.Label();
             this.lblBudgetItemAmount = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBarBudget = new System.Windows.Forms.ProgressBar();
             this.iconButtonEdit = new FontAwesome.Sharp.IconButton();
             this.iconButtonDelete = new FontAwesome.Sharp.IconButton();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -59,15 +59,15 @@ namespace StocksAndFinance.CustomControls
             this.lblBudgetItemAmount.TabIndex = 1;
             this.lblBudgetItemAmount.Text = "$0 of $100";
             // 
-            // progressBar1
+            // progressBarBudget
             // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.progressBarBudget.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.ForeColor = System.Drawing.Color.Green;
-            this.progressBar1.Location = new System.Drawing.Point(17, 48);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(766, 10);
-            this.progressBar1.TabIndex = 2;
+            this.progressBarBudget.ForeColor = System.Drawing.Color.Green;
+            this.progressBarBudget.Location = new System.Drawing.Point(17, 48);
+            this.progressBarBudget.Name = "progressBarBudget";
+            this.progressBarBudget.Size = new System.Drawing.Size(766, 10);
+            this.progressBarBudget.TabIndex = 2;
             // 
             // iconButtonEdit
             // 
@@ -119,7 +119,7 @@ namespace StocksAndFinance.CustomControls
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.iconButtonDelete);
             this.Controls.Add(this.iconButtonEdit);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.progressBarBudget);
             this.Controls.Add(this.lblBudgetItemAmount);
             this.Controls.Add(this.lblBudgetItem);
             this.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,7 +136,7 @@ namespace StocksAndFinance.CustomControls
 
         private System.Windows.Forms.Label lblBudgetItem;
         private System.Windows.Forms.Label lblBudgetItemAmount;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBarBudget;
         private FontAwesome.Sharp.IconButton iconButtonEdit;
         private FontAwesome.Sharp.IconButton iconButtonDelete;
         private System.Windows.Forms.Label lblDescription;
