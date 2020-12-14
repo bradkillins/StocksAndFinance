@@ -14,14 +14,36 @@ namespace StocksAndFinance.Forms
 {
     public partial class BudgetForm : Form
     {
+        public static BudgetForm Self;
+        private Form CurrentChildForm;
+        private User CurrentUser;
         List<Budget> BudgetData;
         int xPosBudgetItem = 10;
         int yPosBudgetItem = 10;
-        public BudgetForm(User currentUser)
+        public BudgetForm(User user)
         {
             InitializeComponent();
-            BudgetData = currentUser.Budgets;
+            CurrentUser = user;
+            BudgetData = CurrentUser.Budgets;
+            //Allow access to MyAddressbook form from child forms
+            Self = this;
         }
+
+        //Open Child form in main panel of BudgetForm
+        //public void OpenChildForm(Form childForm)
+        //{
+        //    if (CurrentChildForm != null)
+        //    {
+        //        CurrentChildForm.Close();
+        //    }
+        //    CurrentChildForm = childForm;
+        //    childForm.TopLevel = false;
+        //    childForm.FormBorderStyle = FormBorderStyle.None;
+        //    childForm.Dock = DockStyle.Fill;
+        //    panelMain.Controls.Add(childForm);
+        //    childForm.BringToFront();
+        //    childForm.Show();
+        //}
 
         private void ChangeCreateItemColorOnMouseleave(object sender, EventArgs e)
         {
@@ -87,6 +109,8 @@ namespace StocksAndFinance.Forms
             //Create a budget item user control for each of the current users budget items
             foreach (Budget item in BudgetData)
             {
+                //Budget currentBudget = new Budget(item.BudgetId, item.Name, item.TimePeriod, item.BudgetAmount, item.UsedAmount);
+
                 Budget currentBudget = item;
                 currentBudget.BudgetId = item.BudgetId;
                 currentBudget.Name = item.Name;
@@ -102,14 +126,6 @@ namespace StocksAndFinance.Forms
                 budgetItem.lblprogressValue = currentBudget.UsedAmount.ToString();
                 budgetItem.lblprogressMax = currentBudget.BudgetAmount.ToString();
                 budgetItem.lblTime = currentBudget.TimePeriod.ToString();
-                if (currentBudget.Description != null)
-                {
-                    budgetItem.lblDescrip = currentBudget.Description;
-                }
-                else
-                {
-                    budgetItem.lblDescrip = "";
-                }
 
                 budgetItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                 panelMain.Controls.Add(budgetItem);
@@ -117,6 +133,12 @@ namespace StocksAndFinance.Forms
                 //space out the controls
                 yPosBudgetItem += 85;
             }
+        }
+
+        private void iconButtonCreateBudgetItem_Click(object sender, EventArgs e)
+        {
+            //CreateBudget newbudget = new CreateBudget(CurrentUser);
+            //BudgetForm.Self.OpenChildForm(newbudget);
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Configuration;
 using Dapper;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace StocksAndFinance
 {
@@ -45,5 +46,14 @@ namespace StocksAndFinance
                 return dbConnection.Query<Stock>($"SELECT * FROM Stocks WHERE UserId = {userId}").ToList();
             }
         }
+
+        //public static void InsertBudget(string budgetTitle, char timePeriod, double budgetAmount, int userId)
+        //{
+        //    using (IDbConnection dbConnection = new SqlConnection(ConnecString))
+        //    {
+        //        new Budget(budgetTitle, timePeriod, budgetAmount);
+        //        dbConnection.Execute($"dbo.InsertNewBudget @budgetTitle, @timePeriod, @budgetAmount, @{userId}");
+        //    }
+        //}
     }
 }

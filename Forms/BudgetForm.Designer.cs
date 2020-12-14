@@ -85,6 +85,7 @@ namespace StocksAndFinance.Forms
             this.iconButtonCreateBudgetItem.Text = "Create Budget Item";
             this.iconButtonCreateBudgetItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonCreateBudgetItem.UseVisualStyleBackColor = true;
+            this.iconButtonCreateBudgetItem.Click += new System.EventHandler(this.iconButtonCreateBudgetItem_Click);
             this.iconButtonCreateBudgetItem.MouseEnter += new System.EventHandler(this.ChangeCreateItemColorOnMouseeEnter);
             this.iconButtonCreateBudgetItem.MouseLeave += new System.EventHandler(this.ChangeCreateItemColorOnMouseleave);
             // 

@@ -81,11 +81,17 @@
     <Compile Include="Forms\BudgetForm.Designer.cs">
       <DependentUpon>BudgetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CreateBudgetItemForm.cs">
+    <Compile Include="Forms\CreateBudget.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CreateBudgetItemForm.Designer.cs">
-      <DependentUpon>CreateBudgetItemForm.cs</DependentUpon>
+    <Compile Include="Forms\CreateBudget.Designer.cs">
+      <DependentUpon>CreateBudget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditBudget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditBudget.Designer.cs">
+      <DependentUpon>EditBudget.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GoalsForm.cs">
       <SubType>Form</SubType>
@@ -108,8 +114,11 @@
     <EmbeddedResource Include="Forms\BudgetForm.resx">
       <DependentUpon>BudgetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateBudgetItemForm.resx">
-      <DependentUpon>CreateBudgetItemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CreateBudget.resx">
+      <DependentUpon>CreateBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditBudget.resx">
+      <DependentUpon>EditBudget.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GoalsForm.resx">
       <DependentUpon>GoalsForm.cs</DependentUpon>

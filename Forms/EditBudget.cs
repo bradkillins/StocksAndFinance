@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StocksAndFinance.Forms
 {
-    public partial class CreateBudgetItemForm : Form
+    public partial class EditBudget : Form
     {
-        public CreateBudgetItemForm()
+        public EditBudget()
         {
             InitializeComponent();
         }

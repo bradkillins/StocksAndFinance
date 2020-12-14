@@ -14,22 +14,24 @@ namespace StocksAndFinance
         public char TimePeriod { get; set; }
         public double BudgetAmount { get; set; }
         public double UsedAmount { get; set; }
-        //public Budget(int budgetId, string name, string description, char timePeriod, double budgetAmount, double UsedAmount)
+
+        //Constructors
+        //public Budget(int budgetId, string name, char timePeriod, double budgetAmount, double UsedAmount)
         //{
         //    this.BudgetId = budgetId;
         //    this.Name = name;
-        //    if(description != null)
-        //    {
-        //        this.Description = description;
-        //    }
-        //    else
-        //    {
-        //        this.Description = "";
-        //    }
         //    this.TimePeriod = timePeriod;
         //    this.BudgetAmount = budgetAmount;
         //    this.UsedAmount = UsedAmount;
         //}
+        //public Budget(string name, char timePeriod, double budgetAmount)
+        //{
+        //    this.Name = name;
+        //    this.TimePeriod = timePeriod;
+        //    this.BudgetAmount = budgetAmount;
+        //}
+
+
         //public Budget(int id)
         //{
         //    List<Budget> budgetData = DbHandler.SelectBudgets(id);

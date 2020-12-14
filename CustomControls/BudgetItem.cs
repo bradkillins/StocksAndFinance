@@ -11,6 +11,7 @@ using FontAwesome.Sharp;
 
 namespace StocksAndFinance.CustomControls
 {
+    //User control that formats how budget data is displayed to the user
     public partial class pnlBudgetItem : UserControl
     {
         public pnlBudgetItem()
@@ -21,11 +22,6 @@ namespace StocksAndFinance.CustomControls
         {
             get{return lblBudgetItem.Text;}
             set{lblBudgetItem.Text = value;}
-        }
-        public string lblDescrip
-        {
-            get{return lblDescription.Text;}
-            set{lblDescription.Text = value;}
         }
         public double progressMin = 0.00;
         
@@ -55,28 +51,23 @@ namespace StocksAndFinance.CustomControls
             set { lblBudgetItemAmount.Text += TimePeriod(value); }
         }
 
+        //Change time value from database into human readable value
         private string TimePeriod(string timeChar)
         {
             switch (timeChar)
             {
                 case "W":
                     return "Weekly";
-                    break;
                 case "B":
                     return "Bi-Weekly";
-                    break;
                 case "M":
                     return "Monthly";
-                    break;
                 case "Q":
                     return "Quaterly";
-                    break;
                 case "Y":
                     return "Yearly";
-                    break;
                 default:
                     return "";
-                    break;
             }
         }
 

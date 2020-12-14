@@ -34,7 +34,6 @@ namespace StocksAndFinance.CustomControls
             this.progressBarBudget = new System.Windows.Forms.ProgressBar();
             this.iconButtonEdit = new FontAwesome.Sharp.IconButton();
             this.iconButtonDelete = new FontAwesome.Sharp.IconButton();
-            this.lblDescription = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblBudgetItem
@@ -113,22 +112,10 @@ namespace StocksAndFinance.CustomControls
             this.iconButtonDelete.MouseEnter += new System.EventHandler(this.MouseEnterChangeIconColor);
             this.iconButtonDelete.MouseLeave += new System.EventHandler(this.MouseLeaveChangeIconColor);
             // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(215, 12);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(149, 22);
-            this.lblDescription.TabIndex = 5;
-            this.lblDescription.Text = "Short Description";
-            this.lblDescription.MouseEnter += new System.EventHandler(this.BudgetItem_MouseEnter);
-            this.lblDescription.MouseLeave += new System.EventHandler(this.BudgetItem_MouseLeave);
-            // 
             // pnlBudgetItem
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.iconButtonDelete);
             this.Controls.Add(this.iconButtonEdit);
             this.Controls.Add(this.progressBarBudget);
@@ -153,6 +140,5 @@ namespace StocksAndFinance.CustomControls
         private System.Windows.Forms.ProgressBar progressBarBudget;
         private FontAwesome.Sharp.IconButton iconButtonEdit;
         private FontAwesome.Sharp.IconButton iconButtonDelete;
-        private System.Windows.Forms.Label lblDescription;
     }
 }
