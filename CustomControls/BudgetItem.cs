@@ -14,10 +14,6 @@ namespace StocksAndFinance.CustomControls
     //User control that formats how budget data is displayed to the user
     public partial class pnlBudgetItem : UserControl
     {
-        public pnlBudgetItem()
-        {
-            InitializeComponent();
-        }
         public string lblTitle
         {
             get{return lblBudgetItem.Text;}
@@ -49,6 +45,17 @@ namespace StocksAndFinance.CustomControls
         {
             get { return lblBudgetItemAmount.Text.ToString(); }
             set { lblBudgetItemAmount.Text += TimePeriod(value); }
+        }
+
+        public pnlBudgetItem(string lblTitle, double progressMax, double progressValue, string lblProgressValue, string lblProgressMax, string lblTime)
+        {
+            InitializeComponent();
+            this.lblTitle = lblTitle;
+            this.progressMax = progressMax;
+            this.progressValue = progressValue;
+            this.lblprogressValue = lblProgressValue;
+            this.lblprogressMax = lblProgressMax;
+            this.lblTime = lblTime;
         }
 
         //Change time value from database into human readable value

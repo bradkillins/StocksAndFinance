@@ -15,7 +15,7 @@ namespace StocksAndFinance.Forms
     public partial class BudgetForm : Form
     {
         public static BudgetForm Self;
-        //private Form CurrentChildForm;
+        private Form CurrentChildForm;
         private User CurrentUser;
         List<Budget> BudgetData;
         int xPosBudgetItem = 10;
@@ -29,21 +29,21 @@ namespace StocksAndFinance.Forms
             Self = this;
         }
 
-        //Open Child form in main panel of BudgetForm
-        //public void OpenChildForm(Form childForm)
-        //{
-        //    if (CurrentChildForm != null)
-        //    {
-        //        CurrentChildForm.Close();
-        //    }
-        //    CurrentChildForm = childForm;
-        //    childForm.TopLevel = false;
-        //    childForm.FormBorderStyle = FormBorderStyle.None;
-        //    childForm.Dock = DockStyle.Fill;
-        //    panelMain.Controls.Add(childForm);
-        //    childForm.BringToFront();
-        //    childForm.Show();
-        //}
+       // Open Child form in main panel of BudgetForm
+        public void OpenChildForm(Form childForm)
+        {
+            if (CurrentChildForm != null)
+            {
+                CurrentChildForm.Close();
+            }
+            CurrentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
         private void ChangeCreateItemColorOnMouseleave(object sender, EventArgs e)
         {
@@ -59,46 +59,6 @@ namespace StocksAndFinance.Forms
             currentBtn.ForeColor = Color.Green;
         }
 
-        //private void BudgetForm_Load(object sender, EventArgs e)
-        //{
-        //    //Create a budget item user control for each of the current users budget items
-        //    foreach (Budget item in BudgetData)
-        //    {
-        //        Budget currentBudget = item;
-        //        currentBudget.BudgetId = item.BudgetId;
-        //        currentBudget.Name = item.Name;
-        //        currentBudget.Description = item.Description;
-        //        currentBudget.TimePeriod = item.TimePeriod;
-        //        currentBudget.BudgetAmount = item.BudgetAmount;
-        //        currentBudget.UsedAmount = item.UsedAmount;
-        //        CreateBudgetItem(currentBudget);
-        //    }
-        //}
-
-        ////Create BudgetItem Control
-        //private void CreateBudgetItem(Budget currentBudget)
-        //{
-        //    pnlBudgetItem budgetItem = new pnlBudgetItem();
-        //    budgetItem.lblTitle = currentBudget.Name;
-        //    budgetItem.progressMax = currentBudget.BudgetAmount;
-        //    budgetItem.progressValue = currentBudget.UsedAmount;
-        //    budgetItem.lblprogressValue = currentBudget.UsedAmount.ToString();
-        //    budgetItem.lblprogressMax = currentBudget.BudgetAmount.ToString();
-        //    if (currentBudget.Description != null)
-        //    {
-        //        budgetItem.lblDescrip = currentBudget.Description;
-        //    }
-        //    else
-        //    {
-        //        budgetItem.lblDescrip = "";
-        //    }
-        //    budgetItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
-        //    panelMain.Controls.Add(budgetItem);
-        //    budgetItem.Location = new Point(xPosBudgetItem, yPosBudgetItem);
-        //    //space out the controls
-        //    yPosBudgetItem += 85;
-        //}
-
         private void BudgetForm_Load(object sender, EventArgs e)
         {
             CreateBudgetItems();
@@ -109,45 +69,20 @@ namespace StocksAndFinance.Forms
             //Create a budget item user control for each of the current users budget items
             foreach (Budget item in BudgetData)
             {
-                pnlBudgetItem budgetItem = new pnlBudgetItem();
-                budgetItem.lblTitle = item.Name;
-                budgetItem.progressMax = item.BudgetAmount;
-                budgetItem.progressValue = item.UsedAmount;
-                budgetItem.lblprogressValue = item.UsedAmount.ToString();
-                budgetItem.lblprogressMax = item.BudgetAmount.ToString();
-                budgetItem.lblTime = item.TimePeriod.ToString();
+                pnlBudgetItem budgetItem = new pnlBudgetItem(item.Name, item.BudgetAmount, item.UsedAmount, item.UsedAmount.ToString(), item.BudgetAmount.ToString(), item.TimePeriod.ToString());
 
                 budgetItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                 panelMain.Controls.Add(budgetItem);
                 budgetItem.Location = new Point(xPosBudgetItem, yPosBudgetItem);
                 //space out the controls
                 yPosBudgetItem += 85;
-
-                //Budget currentBudget = new Budget(item.BudgetId, item.Name, item.TimePeriod, item.BudgetAmount, item.UsedAmount);
-                //budgetItems.Add(currentBudget);
-
-                //Unecessary
-                //Budget currentBudget = item;
-                //currentBudget.BudgetId = item.BudgetId;
-                //currentBudget.Name = item.Name;
-                //currentBudget.Description = item.Description;
-                //currentBudget.TimePeriod = item.TimePeriod;
-                //currentBudget.BudgetAmount = item.BudgetAmount;
-                //currentBudget.UsedAmount = item.UsedAmount;
-                //pnlBudgetItem budgetItem = new pnlBudgetItem();
-                //budgetItem.lblTitle = currentBudget.Name;
-                //budgetItem.progressMax = currentBudget.BudgetAmount;
-                //budgetItem.progressValue = currentBudget.UsedAmount;
-                //budgetItem.lblprogressValue = currentBudget.UsedAmount.ToString();
-                //budgetItem.lblprogressMax = currentBudget.BudgetAmount.ToString();
-                //budgetItem.lblTime = currentBudget.TimePeriod.ToString();
             }
         }
 
         private void iconButtonCreateBudgetItem_Click(object sender, EventArgs e)
         {
-            //CreateBudget newbudget = new CreateBudget(CurrentUser);
-            //BudgetForm.Self.OpenChildForm(newbudget);
+            CreateBudget newBudget = new CreateBudget(CurrentUser);
+            BudgetForm.Self.OpenChildForm(newBudget);
         }
     }
 }

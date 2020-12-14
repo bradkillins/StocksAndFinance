@@ -47,13 +47,15 @@ namespace StocksAndFinance
             }
         }
 
-        //public static void InsertBudget(string budgetTitle, char timePeriod, double budgetAmount, int userId)
-        //{
-        //    using (IDbConnection dbConnection = new SqlConnection(ConnecString))
-        //    {
-        //        new Budget(budgetTitle, timePeriod, budgetAmount);
-        //        dbConnection.Execute($"dbo.InsertNewBudget @budgetTitle, @timePeriod, @budgetAmount, @{userId}");
-        //    }
-        //}
+        public static void InsertBudget(string budgetTitle, char timePeriod, double startingAmount, double budgetAmount, int userId)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnecString))
+            {
+                //stored procedure
+                //dbConnection.Execute($"dbo.InsertNewBudget @budgetTitle, @timePeriod, @startingAmount @budgetAmount, @userId", new { budgetTitle, timePeriod, startingAmount budgetAmount, userId} );
+                //sql query
+                dbConnection.Execute($"INSERT INTO Budgets(Name, TimePeriod, StartingAmount, BudgetAmount, UsedAmount) VALUES(@budgetTitle, @timePeriod, @budgetAmount, @userId)", new { budgetTitle, timePeriod, startingAmount, budgetAmount, userId});
+            }
+        }
     }
 }

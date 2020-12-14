@@ -21,7 +21,7 @@ namespace StocksAndFinance.Forms
 
         private void btnCreateBudget_Click(object sender, EventArgs e)
         {
-            //DbHandler.InsertBudget(txtBudgetName.Text, (char)cmbTimePeriod.SelectedItem, double.Parse(mtxtBudgetAmount.Text), currentUser.UserId);
+            DbHandler.InsertBudget(txtBudgetName.Text, (char)cmbTimePeriod.SelectedItem, double.Parse(mtxtStartingAmount.Text), double.Parse(mtxtBudgetAmount.Text), currentUser.UserId);
         }
     }
 }
