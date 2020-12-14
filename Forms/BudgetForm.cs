@@ -15,7 +15,7 @@ namespace StocksAndFinance.Forms
     public partial class BudgetForm : Form
     {
         public static BudgetForm Self;
-        private Form CurrentChildForm;
+        //private Form CurrentChildForm;
         private User CurrentUser;
         List<Budget> BudgetData;
         int xPosBudgetItem = 10;
@@ -109,29 +109,38 @@ namespace StocksAndFinance.Forms
             //Create a budget item user control for each of the current users budget items
             foreach (Budget item in BudgetData)
             {
-                //Budget currentBudget = new Budget(item.BudgetId, item.Name, item.TimePeriod, item.BudgetAmount, item.UsedAmount);
-
-                Budget currentBudget = item;
-                currentBudget.BudgetId = item.BudgetId;
-                currentBudget.Name = item.Name;
-                currentBudget.Description = item.Description;
-                currentBudget.TimePeriod = item.TimePeriod;
-                currentBudget.BudgetAmount = item.BudgetAmount;
-                currentBudget.UsedAmount = item.UsedAmount;
-
                 pnlBudgetItem budgetItem = new pnlBudgetItem();
-                budgetItem.lblTitle = currentBudget.Name;
-                budgetItem.progressMax = currentBudget.BudgetAmount;
-                budgetItem.progressValue = currentBudget.UsedAmount;
-                budgetItem.lblprogressValue = currentBudget.UsedAmount.ToString();
-                budgetItem.lblprogressMax = currentBudget.BudgetAmount.ToString();
-                budgetItem.lblTime = currentBudget.TimePeriod.ToString();
+                budgetItem.lblTitle = item.Name;
+                budgetItem.progressMax = item.BudgetAmount;
+                budgetItem.progressValue = item.UsedAmount;
+                budgetItem.lblprogressValue = item.UsedAmount.ToString();
+                budgetItem.lblprogressMax = item.BudgetAmount.ToString();
+                budgetItem.lblTime = item.TimePeriod.ToString();
 
                 budgetItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                 panelMain.Controls.Add(budgetItem);
                 budgetItem.Location = new Point(xPosBudgetItem, yPosBudgetItem);
                 //space out the controls
                 yPosBudgetItem += 85;
+
+                //Budget currentBudget = new Budget(item.BudgetId, item.Name, item.TimePeriod, item.BudgetAmount, item.UsedAmount);
+                //budgetItems.Add(currentBudget);
+
+                //Unecessary
+                //Budget currentBudget = item;
+                //currentBudget.BudgetId = item.BudgetId;
+                //currentBudget.Name = item.Name;
+                //currentBudget.Description = item.Description;
+                //currentBudget.TimePeriod = item.TimePeriod;
+                //currentBudget.BudgetAmount = item.BudgetAmount;
+                //currentBudget.UsedAmount = item.UsedAmount;
+                //pnlBudgetItem budgetItem = new pnlBudgetItem();
+                //budgetItem.lblTitle = currentBudget.Name;
+                //budgetItem.progressMax = currentBudget.BudgetAmount;
+                //budgetItem.progressValue = currentBudget.UsedAmount;
+                //budgetItem.lblprogressValue = currentBudget.UsedAmount.ToString();
+                //budgetItem.lblprogressMax = currentBudget.BudgetAmount.ToString();
+                //budgetItem.lblTime = currentBudget.TimePeriod.ToString();
             }
         }
 
