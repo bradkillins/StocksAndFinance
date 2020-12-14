@@ -14,13 +14,9 @@ namespace StocksAndFinance.Forms
 {
     public partial class BudgetForm : Form
     {
-        //public BudgetForm()
-        //{
-        //    InitializeComponent();
-        //}
         List<Budget> BudgetData;
-        int xLocation = 10;
-        int yLocation = 10;
+        int xPosBudgetItem = 10;
+        int yPosBudgetItem = 10;
         public BudgetForm(User currentUser)
         {
             InitializeComponent();
@@ -41,7 +37,52 @@ namespace StocksAndFinance.Forms
             currentBtn.ForeColor = Color.Green;
         }
 
+        //private void BudgetForm_Load(object sender, EventArgs e)
+        //{
+        //    //Create a budget item user control for each of the current users budget items
+        //    foreach (Budget item in BudgetData)
+        //    {
+        //        Budget currentBudget = item;
+        //        currentBudget.BudgetId = item.BudgetId;
+        //        currentBudget.Name = item.Name;
+        //        currentBudget.Description = item.Description;
+        //        currentBudget.TimePeriod = item.TimePeriod;
+        //        currentBudget.BudgetAmount = item.BudgetAmount;
+        //        currentBudget.UsedAmount = item.UsedAmount;
+        //        CreateBudgetItem(currentBudget);
+        //    }
+        //}
+
+        ////Create BudgetItem Control
+        //private void CreateBudgetItem(Budget currentBudget)
+        //{
+        //    pnlBudgetItem budgetItem = new pnlBudgetItem();
+        //    budgetItem.lblTitle = currentBudget.Name;
+        //    budgetItem.progressMax = currentBudget.BudgetAmount;
+        //    budgetItem.progressValue = currentBudget.UsedAmount;
+        //    budgetItem.lblprogressValue = currentBudget.UsedAmount.ToString();
+        //    budgetItem.lblprogressMax = currentBudget.BudgetAmount.ToString();
+        //    if (currentBudget.Description != null)
+        //    {
+        //        budgetItem.lblDescrip = currentBudget.Description;
+        //    }
+        //    else
+        //    {
+        //        budgetItem.lblDescrip = "";
+        //    }
+        //    budgetItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+        //    panelMain.Controls.Add(budgetItem);
+        //    budgetItem.Location = new Point(xPosBudgetItem, yPosBudgetItem);
+        //    //space out the controls
+        //    yPosBudgetItem += 85;
+        //}
+
         private void BudgetForm_Load(object sender, EventArgs e)
+        {
+            CreateBudgetItems();
+        }
+        //Create and display BudgetItem Controls
+        private void CreateBudgetItems()
         {
             //Create a budget item user control for each of the current users budget items
             foreach (Budget item in BudgetData)
@@ -53,32 +94,29 @@ namespace StocksAndFinance.Forms
                 currentBudget.TimePeriod = item.TimePeriod;
                 currentBudget.BudgetAmount = item.BudgetAmount;
                 currentBudget.UsedAmount = item.UsedAmount;
-                CreateBudgetItem(currentBudget);
-            }
-        }
 
-        //Create BudgetItem Control
-        private void CreateBudgetItem(Budget currentBudget)
-        {
-            BudgetItem budgetItem = new BudgetItem();
-            budgetItem.lblTitle = currentBudget.Name;
-            budgetItem.progressMax = currentBudget.BudgetAmount;
-            budgetItem.progressValue = currentBudget.UsedAmount;
-            budgetItem.lblprogressValue = currentBudget.UsedAmount.ToString();
-            budgetItem.lblprogressMax = currentBudget.BudgetAmount.ToString();
-            if (currentBudget.Description != null)
-            {
-                budgetItem.lblDescrip = currentBudget.Description;
+                pnlBudgetItem budgetItem = new pnlBudgetItem();
+                budgetItem.lblTitle = currentBudget.Name;
+                budgetItem.progressMax = currentBudget.BudgetAmount;
+                budgetItem.progressValue = currentBudget.UsedAmount;
+                budgetItem.lblprogressValue = currentBudget.UsedAmount.ToString();
+                budgetItem.lblprogressMax = currentBudget.BudgetAmount.ToString();
+                budgetItem.lblTime = currentBudget.TimePeriod.ToString();
+                if (currentBudget.Description != null)
+                {
+                    budgetItem.lblDescrip = currentBudget.Description;
+                }
+                else
+                {
+                    budgetItem.lblDescrip = "";
+                }
+
+                budgetItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+                panelMain.Controls.Add(budgetItem);
+                budgetItem.Location = new Point(xPosBudgetItem, yPosBudgetItem);
+                //space out the controls
+                yPosBudgetItem += 85;
             }
-            else
-            {
-                budgetItem.lblDescrip = "";
-            }
-            budgetItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
-            panelMain.Controls.Add(budgetItem);
-            budgetItem.Location = new Point(xLocation, yLocation);
-            //space out the controls
-            yLocation += 85;
         }
     }
 }

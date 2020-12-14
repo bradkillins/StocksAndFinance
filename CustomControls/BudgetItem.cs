@@ -11,9 +11,9 @@ using FontAwesome.Sharp;
 
 namespace StocksAndFinance.CustomControls
 {
-    public partial class BudgetItem : UserControl
+    public partial class pnlBudgetItem : UserControl
     {
-        public BudgetItem()
+        public pnlBudgetItem()
         {
             InitializeComponent();
         }
@@ -47,7 +47,37 @@ namespace StocksAndFinance.CustomControls
         public string lblprogressMax
         {
             get{return lblBudgetItemAmount.Text;}
-            set{lblBudgetItemAmount.Text += value.ToString();}
+            set{lblBudgetItemAmount.Text += value.ToString() + "  ";}
+        }
+        public string lblTime
+        {
+            get { return lblBudgetItemAmount.Text.ToString(); }
+            set { lblBudgetItemAmount.Text += TimePeriod(value); }
+        }
+
+        private string TimePeriod(string timeChar)
+        {
+            switch (timeChar)
+            {
+                case "W":
+                    return "Weekly";
+                    break;
+                case "B":
+                    return "Bi-Weekly";
+                    break;
+                case "M":
+                    return "Monthly";
+                    break;
+                case "Q":
+                    return "Quaterly";
+                    break;
+                case "Y":
+                    return "Yearly";
+                    break;
+                default:
+                    return "";
+                    break;
+            }
         }
 
         private void MouseEnterChangeIconColor(object sender, EventArgs e)
@@ -55,6 +85,7 @@ namespace StocksAndFinance.CustomControls
             var currentBtn = (IconButton)sender;
             currentBtn.IconColor = Color.Red;
             currentBtn.ForeColor = Color.Red;
+            this.BackColor = Color.FromArgb(60, 60, 60);
         }
 
         private void MouseLeaveChangeIconColor(object sender, EventArgs e)
@@ -62,6 +93,17 @@ namespace StocksAndFinance.CustomControls
             var currentBtn = (IconButton)sender;
             currentBtn.IconColor = Color.WhiteSmoke;
             currentBtn.ForeColor = Color.WhiteSmoke;
+            this.BackColor = Color.FromArgb(40,40,40);
+        }
+                
+        private void BudgetItem_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(60, 60, 60);
+        }
+
+        private void BudgetItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(40, 40, 40);
         }
     }
 }
