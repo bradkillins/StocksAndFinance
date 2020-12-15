@@ -29,62 +29,37 @@ namespace StocksAndFinance.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.cmbTimePeriod = new System.Windows.Forms.ComboBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBudgetName = new System.Windows.Forms.TextBox();
             this.lblBudgetName = new System.Windows.Forms.Label();
             this.lblEditBudget = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.lblSpent = new System.Windows.Forms.Label();
+            this.txtUsedAmount = new System.Windows.Forms.TextBox();
+            this.txtBudgetAmount = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btnCreate
+            // btnUpdate
             // 
-            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate.Font = new System.Drawing.Font("Garamond", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(430, 421);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(300, 45);
-            this.btnCreate.TabIndex = 20;
-            this.btnCreate.Text = "Update Budget";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Garamond", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(430, 356);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(300, 45);
+            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.Text = "Update Budget";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // textBox2
+            // cmbTimePeriod
             // 
-            this.textBox2.Location = new System.Drawing.Point(430, 363);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(300, 30);
-            this.textBox2.TabIndex = 19;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(430, 303);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(300, 30);
-            this.maskedTextBox1.TabIndex = 18;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(430, 183);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(300, 30);
-            this.comboBox1.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(158, 360);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(231, 31);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Short Description:";
+            this.cmbTimePeriod.FormattingEnabled = true;
+            this.cmbTimePeriod.Location = new System.Drawing.Point(430, 183);
+            this.cmbTimePeriod.Name = "cmbTimePeriod";
+            this.cmbTimePeriod.Size = new System.Drawing.Size(300, 30);
+            this.cmbTimePeriod.TabIndex = 17;
             // 
             // lblAmount
             // 
@@ -106,12 +81,12 @@ namespace StocksAndFinance.Forms
             this.lblTime.TabIndex = 14;
             this.lblTime.Text = "Time Period:";
             // 
-            // textBox1
+            // txtBudgetName
             // 
-            this.textBox1.Location = new System.Drawing.Point(430, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 30);
-            this.textBox1.TabIndex = 13;
+            this.txtBudgetName.Location = new System.Drawing.Point(430, 123);
+            this.txtBudgetName.Name = "txtBudgetName";
+            this.txtBudgetName.Size = new System.Drawing.Size(300, 30);
+            this.txtBudgetName.TabIndex = 13;
             // 
             // lblBudgetName
             // 
@@ -133,13 +108,6 @@ namespace StocksAndFinance.Forms
             this.lblEditBudget.TabIndex = 11;
             this.lblEditBudget.Text = "Edit Budget";
             // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(430, 243);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(300, 30);
-            this.maskedTextBox2.TabIndex = 22;
-            // 
             // lblSpent
             // 
             this.lblSpent.AutoSize = true;
@@ -150,21 +118,33 @@ namespace StocksAndFinance.Forms
             this.lblSpent.TabIndex = 21;
             this.lblSpent.Text = "Amount Spent:";
             // 
+            // txtUsedAmount
+            // 
+            this.txtUsedAmount.Location = new System.Drawing.Point(430, 240);
+            this.txtUsedAmount.Name = "txtUsedAmount";
+            this.txtUsedAmount.Size = new System.Drawing.Size(300, 30);
+            this.txtUsedAmount.TabIndex = 22;
+            // 
+            // txtBudgetAmount
+            // 
+            this.txtBudgetAmount.Location = new System.Drawing.Point(430, 303);
+            this.txtBudgetAmount.Name = "txtBudgetAmount";
+            this.txtBudgetAmount.Size = new System.Drawing.Size(300, 30);
+            this.txtBudgetAmount.TabIndex = 23;
+            // 
             // EditBudget
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(895, 503);
-            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.txtBudgetAmount);
+            this.Controls.Add(this.txtUsedAmount);
             this.Controls.Add(this.lblSpent);
-            this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.cmbTimePeriod);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBudgetName);
             this.Controls.Add(this.lblBudgetName);
             this.Controls.Add(this.lblEditBudget);
             this.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,17 +159,15 @@ namespace StocksAndFinance.Forms
 
         #endregion
 
-        private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.ComboBox cmbTimePeriod;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBudgetName;
         private System.Windows.Forms.Label lblBudgetName;
         private System.Windows.Forms.Label lblEditBudget;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Label lblSpent;
+        private System.Windows.Forms.TextBox txtUsedAmount;
+        private System.Windows.Forms.TextBox txtBudgetAmount;
     }
 }

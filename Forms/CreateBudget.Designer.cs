@@ -36,9 +36,11 @@ namespace StocksAndFinance.Forms
             this.lblStartingAmount = new System.Windows.Forms.Label();
             this.lblBudgetAmount = new System.Windows.Forms.Label();
             this.cmbTimePeriod = new System.Windows.Forms.ComboBox();
-            this.mtxtStartingAmount = new System.Windows.Forms.MaskedTextBox();
             this.btnCreateBudget = new System.Windows.Forms.Button();
-            this.mtxtBudgetAmount = new System.Windows.Forms.MaskedTextBox();
+            this.txtBudgetAmount = new System.Windows.Forms.TextBox();
+            this.txtStartingAmount = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCreateBudget
@@ -100,18 +102,18 @@ namespace StocksAndFinance.Forms
             // 
             // cmbTimePeriod
             // 
+            this.cmbTimePeriod.AutoCompleteCustomSource.AddRange(new string[] {
+            "\"Weekly\"",
+            "\"Bi-Weekly\"",
+            "\"Monthly\"",
+            "\"Quarterly\"",
+            "\"Yearly\""});
             this.cmbTimePeriod.FormattingEnabled = true;
             this.cmbTimePeriod.Location = new System.Drawing.Point(427, 203);
             this.cmbTimePeriod.Name = "cmbTimePeriod";
             this.cmbTimePeriod.Size = new System.Drawing.Size(300, 30);
             this.cmbTimePeriod.TabIndex = 7;
-            // 
-            // mtxtStartingAmount
-            // 
-            this.mtxtStartingAmount.Location = new System.Drawing.Point(427, 278);
-            this.mtxtStartingAmount.Name = "mtxtStartingAmount";
-            this.mtxtStartingAmount.Size = new System.Drawing.Size(300, 30);
-            this.mtxtStartingAmount.TabIndex = 8;
+            this.cmbTimePeriod.Text = "Select Item From List";
             // 
             // btnCreateBudget
             // 
@@ -125,21 +127,50 @@ namespace StocksAndFinance.Forms
             this.btnCreateBudget.UseVisualStyleBackColor = true;
             this.btnCreateBudget.Click += new System.EventHandler(this.btnCreateBudget_Click);
             // 
-            // mtxtBudgetAmount
+            // txtBudgetAmount
             // 
-            this.mtxtBudgetAmount.Location = new System.Drawing.Point(427, 353);
-            this.mtxtBudgetAmount.Name = "mtxtBudgetAmount";
-            this.mtxtBudgetAmount.Size = new System.Drawing.Size(300, 30);
-            this.mtxtBudgetAmount.TabIndex = 11;
+            this.txtBudgetAmount.Location = new System.Drawing.Point(427, 353);
+            this.txtBudgetAmount.Name = "txtBudgetAmount";
+            this.txtBudgetAmount.Size = new System.Drawing.Size(300, 30);
+            this.txtBudgetAmount.TabIndex = 11;
+            this.txtBudgetAmount.Text = "0.00";
+            // 
+            // txtStartingAmount
+            // 
+            this.txtStartingAmount.Location = new System.Drawing.Point(427, 278);
+            this.txtStartingAmount.Name = "txtStartingAmount";
+            this.txtStartingAmount.Size = new System.Drawing.Size(300, 30);
+            this.txtStartingAmount.TabIndex = 12;
+            this.txtStartingAmount.Text = "0.00";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(402, 281);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(19, 22);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "$";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(402, 356);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 22);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "$";
             // 
             // CreateBudget
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(895, 503);
-            this.Controls.Add(this.mtxtBudgetAmount);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtStartingAmount);
+            this.Controls.Add(this.txtBudgetAmount);
             this.Controls.Add(this.btnCreateBudget);
-            this.Controls.Add(this.mtxtStartingAmount);
             this.Controls.Add(this.cmbTimePeriod);
             this.Controls.Add(this.lblBudgetAmount);
             this.Controls.Add(this.lblStartingAmount);
@@ -166,8 +197,10 @@ namespace StocksAndFinance.Forms
         private System.Windows.Forms.Label lblStartingAmount;
         private System.Windows.Forms.Label lblBudgetAmount;
         private System.Windows.Forms.ComboBox cmbTimePeriod;
-        private System.Windows.Forms.MaskedTextBox mtxtStartingAmount;
         private System.Windows.Forms.Button btnCreateBudget;
-        private System.Windows.Forms.MaskedTextBox mtxtBudgetAmount;
+        private System.Windows.Forms.TextBox txtBudgetAmount;
+        private System.Windows.Forms.TextBox txtStartingAmount;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

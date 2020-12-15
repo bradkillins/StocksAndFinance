@@ -14,19 +14,17 @@ namespace StocksAndFinance.Forms
 {
     public partial class BudgetForm : Form
     {
-        public static BudgetForm Self;
+        public static BudgetForm CurrentBudgetForm;
         private Form CurrentChildForm;
         private User CurrentUser;
-        List<Budget> BudgetData;
         int xPosBudgetItem = 10;
         int yPosBudgetItem = 10;
         public BudgetForm(User user)
         {
             InitializeComponent();
             CurrentUser = user;
-            BudgetData = CurrentUser.Budgets;
             //Allow access to MyAddressbook form from child forms
-            Self = this;
+            CurrentBudgetForm = this;
         }
 
        // Open Child form in main panel of BudgetForm
@@ -67,14 +65,14 @@ namespace StocksAndFinance.Forms
         private void CreateBudgetItems()
         {
             //Create a budget item user control for each of the current users budget items
-            foreach (Budget item in BudgetData)
+            foreach (Budget item in CurrentUser.Budgets)
             {
-                pnlBudgetItem budgetItem = new pnlBudgetItem(item.Name, item.BudgetAmount, item.UsedAmount, item.UsedAmount.ToString(), item.BudgetAmount.ToString(), item.TimePeriod.ToString());
+                pnlBudgetItem budgetItem = new pnlBudgetItem(item.Name, item.BudgetAmount, item.UsedAmount, item.UsedAmount.ToString(), item.BudgetAmount.ToString(), item.TimePeriod.ToString(), item.BudgetId, CurrentUser.UserId);
 
                 budgetItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                 panelMain.Controls.Add(budgetItem);
                 budgetItem.Location = new Point(xPosBudgetItem, yPosBudgetItem);
-                //space out the controls
+                //space out the budget items
                 yPosBudgetItem += 85;
             }
         }
@@ -82,7 +80,7 @@ namespace StocksAndFinance.Forms
         private void iconButtonCreateBudgetItem_Click(object sender, EventArgs e)
         {
             CreateBudget newBudget = new CreateBudget(CurrentUser);
-            BudgetForm.Self.OpenChildForm(newBudget);
+            BudgetForm.CurrentBudgetForm.OpenChildForm(newBudget);
         }
     }
 }

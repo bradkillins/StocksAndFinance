@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using StocksAndFinance.Forms;
 
 namespace StocksAndFinance.CustomControls
 {
@@ -39,15 +40,18 @@ namespace StocksAndFinance.CustomControls
         public string lblprogressMax
         {
             get{return lblBudgetItemAmount.Text;}
-            set{lblBudgetItemAmount.Text += value.ToString() + "  ";}
+            set{lblBudgetItemAmount.Text += value.ToString();}
         }
         public string lblTime
         {
-            get { return lblBudgetItemAmount.Text.ToString(); }
-            set { lblBudgetItemAmount.Text += TimePeriod(value); }
+            get { return lblTimePeriod.Text; }
+            set { lblTimePeriod.Text = TimePeriod(value); }
         }
+        //Not sure if theres a better way to access budgetId and userId
+        internal int budgetId;
+        internal int userId;
 
-        public pnlBudgetItem(string lblTitle, double progressMax, double progressValue, string lblProgressValue, string lblProgressMax, string lblTime)
+        public pnlBudgetItem(string lblTitle, double progressMax, double progressValue, string lblProgressValue, string lblProgressMax, string lblTime, int currentBudgetId, int currentUserId )
         {
             InitializeComponent();
             this.lblTitle = lblTitle;
@@ -56,6 +60,8 @@ namespace StocksAndFinance.CustomControls
             this.lblprogressValue = lblProgressValue;
             this.lblprogressMax = lblProgressMax;
             this.lblTime = lblTime;
+            this.budgetId = currentBudgetId;
+            this.userId = currentUserId;
         }
 
         //Change time value from database into human readable value
@@ -102,6 +108,28 @@ namespace StocksAndFinance.CustomControls
         private void BudgetItem_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(40, 40, 40);
+        }
+
+        private void iconButtonPlus_Click(object sender, EventArgs e)
+        {
+            DbHandler.UpdateUsedAmount(++this.progressValue, budgetId, userId);
+            lblBudgetItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
+        }
+        private void iconButtonMinus_Click(object sender, EventArgs e)
+        {
+            DbHandler.UpdateUsedAmount(--this.progressValue, budgetId, userId);
+            lblBudgetItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
+        }
+
+        private void iconButtonDelete_Click(object sender, EventArgs e)
+        {
+           DbHandler.DeleteBudget(budgetId, userId);
+        }
+
+        private void iconButtonEdit_Click(object sender, EventArgs e)
+        {
+            EditBudget edit = new EditBudget(lblBudgetItem.Text, lblTimePeriod.Text, progressBarBudget.Value.ToString(), progressBarBudget.Maximum.ToString(), userId, budgetId);
+            BudgetForm.CurrentBudgetForm.OpenChildForm(edit);
         }
     }
 }

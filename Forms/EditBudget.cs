@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StocksAndFinance.CustomControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,32 @@ namespace StocksAndFinance.Forms
 {
     public partial class EditBudget : Form
     {
-        public EditBudget()
+        internal int currentUserId;
+        internal int currentBudgetId;
+        internal EditBudget currentForm;
+        public EditBudget(string currentName, string currentTime, string currentUsed, string currentBudget, int userId, int budgetId)
         {
             InitializeComponent();
+            currentForm = this;
+            currentUserId = userId;
+            currentBudgetId = budgetId;
+            txtBudgetName.Text = currentName;
+            txtUsedAmount.Text = currentUsed;
+            txtBudgetAmount.Text = currentBudget;
+            cmbTimePeriod.Text = currentTime;
+            cmbTimePeriod.Items.Add("Weekly");
+            cmbTimePeriod.Items.Add("Bi-Weekly");
+            cmbTimePeriod.Items.Add("Monthly");
+            cmbTimePeriod.Items.Add("Quarterly");
+            cmbTimePeriod.Items.Add("Yearly");
+            cmbTimePeriod.SelectedIndex = cmbTimePeriod.FindStringExact(currentTime);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DbHandler.UpdateBudget(txtBudgetName.Text, cmbTimePeriod.SelectedItem.ToString().ToCharArray()[0], double.Parse(txtUsedAmount.Text), double.Parse(txtBudgetAmount.Text), currentUserId, currentBudgetId);
+            currentForm.Close();
+            BudgetForm.CurrentBudgetForm.Refresh();
         }
     }
 }
