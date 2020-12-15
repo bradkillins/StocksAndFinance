@@ -16,7 +16,10 @@ namespace StocksAndFinance
             foreach (var user in users)
             {
                 if (user.Email == email && user.Password == password)
+                {
+                    currentUser = user;
                     return true;
+                }   
             }
             return false;
         }
