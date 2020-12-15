@@ -1,4 +1,5 @@
-﻿using StocksAndFinance.CustomControls;
+﻿using StocksAndFinance.Classes;
+using StocksAndFinance.CustomControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,13 +33,21 @@ namespace StocksAndFinance.Forms
             cmbTimePeriod.Items.Add("Quarterly");
             cmbTimePeriod.Items.Add("Yearly");
             cmbTimePeriod.SelectedIndex = cmbTimePeriod.FindStringExact(currentTime);
+            FormClosing += Validators.ThisFormClosing;
+            txtBudgetName.Validating += Validators.NameValidating;
+            txtBudgetAmount.Validating += Validators.BudgetAmountValidating;
+            txtUsedAmount.Validating += Validators.UsedAmountValidating;
+            cmbTimePeriod.Validating += Validators.TimePeriodValidating;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            DbHandler.UpdateBudget(txtBudgetName.Text, cmbTimePeriod.SelectedItem.ToString().ToCharArray()[0], double.Parse(txtUsedAmount.Text), double.Parse(txtBudgetAmount.Text), currentUserId, currentBudgetId);
-            currentForm.Close();
-            BudgetForm.CurrentBudgetForm.Refresh();
+            if (ValidateChildren())
+            {
+                DbHandler.UpdateBudget(txtBudgetName.Text, cmbTimePeriod.SelectedItem.ToString().ToCharArray()[0], double.Parse(txtUsedAmount.Text), double.Parse(txtBudgetAmount.Text), currentUserId, currentBudgetId);
+                currentForm.Close();
+                BudgetForm.CurrentBudgetForm.Refresh();
+            }         
         }
     }
 }

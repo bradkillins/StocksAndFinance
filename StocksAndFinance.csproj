@@ -69,6 +69,7 @@
     <Compile Include="Classes\Goal.cs" />
     <Compile Include="Classes\Stock.cs" />
     <Compile Include="Classes\StockHistory.cs" />
+    <Compile Include="Classes\Validators.cs" />
     <Compile Include="CustomControls\BudgetItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -149,6 +150,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

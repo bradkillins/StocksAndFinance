@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StocksAndFinance.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,14 +26,22 @@ namespace StocksAndFinance.Forms
             cmbTimePeriod.Items.Add("Monthly");
             cmbTimePeriod.Items.Add("Quarterly");
             cmbTimePeriod.Items.Add("Yearly");
-
+            FormClosing += Validators.ThisFormClosing;
+            txtBudgetName.Validating += Validators.NameValidating;
+            txtBudgetAmount.Validating += Validators.BudgetAmountValidating;
+            txtStartingAmount.Validating += Validators.UsedAmountValidating;
+            cmbTimePeriod.Validating += Validators.TimePeriodValidating;
         }
 
         private void btnCreateBudget_Click(object sender, EventArgs e)
         {
-            DbHandler.InsertBudget(txtBudgetName.Text, cmbTimePeriod.SelectedItem.ToString().ToCharArray()[0], double.Parse(txtStartingAmount.Text, CultureInfo.InvariantCulture), double.Parse(txtBudgetAmount.Text, CultureInfo.InvariantCulture), currentUser.UserId);
-            currentForm.Close();
-            BudgetForm.CurrentBudgetForm.Refresh();
+            if (ValidateChildren())
+            {
+                DbHandler.InsertBudget(txtBudgetName.Text, cmbTimePeriod.SelectedItem.ToString().ToCharArray()[0], double.Parse(txtStartingAmount.Text, CultureInfo.InvariantCulture), double.Parse(txtBudgetAmount.Text, CultureInfo.InvariantCulture), currentUser.UserId);
+                currentForm.Close();
+            }
+            
+            //BudgetForm.CurrentBudgetForm.Refresh();
         }
     }
 }
