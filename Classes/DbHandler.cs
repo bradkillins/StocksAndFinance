@@ -23,6 +23,31 @@ namespace StocksAndFinance
             }
         }
 
+        public static User SelectUser(string email)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnecString))
+            { 
+                return dbConnection.Query<User>($"SELECT * FROM Users WHERE Email = '{email}'").ToList()[0];
+            }
+        }
+
+        public static bool InsertNewUser(string email, string fName, string lName, string password, char type)
+        {
+            int rowsEffected;
+            using (IDbConnection dbConnection = new SqlConnection(ConnecString))
+            {
+                string query = @"INSERT INTO Users VALUES(@Email, @FirstName, @LastName, @Password, @Type);";
+                rowsEffected = dbConnection.Execute(query, new { 
+                    Email = email,
+                    FirstName = fName,
+                    LastName = lName,
+                    Password = password,
+                    Type = type
+                });
+            }
+            return rowsEffected == 1;
+        }
+
         public static List<Goal> SelectGoals(int userId)
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnecString))

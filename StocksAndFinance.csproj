@@ -36,8 +36,8 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="FontAwesome.Sharp">
-      <HintPath>..\..\SODV2101_Rapid_Application_Development\AddressBook\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -69,11 +69,19 @@
     <Compile Include="Classes\Goal.cs" />
     <Compile Include="Classes\Stock.cs" />
     <Compile Include="Classes\StockHistory.cs" />
+    <Compile Include="Classes\Users.cs" />
+    <Compile Include="Classes\Validators.cs" />
     <Compile Include="CustomControls\BudgetItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomControls\BudgetItem.Designer.cs">
       <DependentUpon>BudgetItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MessagePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessagePrompt.Designer.cs">
+      <DependentUpon>MessagePrompt.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BudgetForm.cs">
       <SubType>Form</SubType>
@@ -99,6 +107,18 @@
     <Compile Include="Forms\GoalsForm.Designer.cs">
       <DependentUpon>GoalsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="Testing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +130,9 @@
     <Compile Include="Classes\User.cs" />
     <EmbeddedResource Include="CustomControls\BudgetItem.resx">
       <DependentUpon>BudgetItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MessagePrompt.resx">
+      <DependentUpon>MessagePrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BudgetForm.resx">
       <DependentUpon>BudgetForm.cs</DependentUpon>
@@ -123,6 +146,12 @@
     <EmbeddedResource Include="Forms\GoalsForm.resx">
       <DependentUpon>GoalsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -131,6 +160,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Testing.resx">
       <DependentUpon>Testing.cs</DependentUpon>
@@ -149,6 +179,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\errorIcon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

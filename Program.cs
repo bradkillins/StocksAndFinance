@@ -14,12 +14,15 @@ namespace StocksAndFinance
         [STAThread]
         static void Main()
         {
+            Validators.SetupErrorProvidor(); //probably a better place for this....
+            List<User> list = Users.users;
+
             //Check out the users variable in debugging mode :)
-            List<User> users = DbHandler.SelectAllUsers();
+            //List<User> users = DbHandler.SelectAllUsers();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Testing());
+            Application.Run(new Login());
         }
     }
 }
