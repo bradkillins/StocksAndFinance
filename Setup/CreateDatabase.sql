@@ -78,5 +78,7 @@ VALUES
 INSERT INTO Budgets
 VALUES
 	('Groceries', 'M', 250, 55, 1),
+	('Bills', 'M', 300, 230, 1),
+	('Entertainment', 'B', 45, 16, 1),
 	('Bills', 'M', 300, 230, 2),
 	('Entertainment', 'B', 45, 16, 3);
