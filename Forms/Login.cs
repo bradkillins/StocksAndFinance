@@ -32,14 +32,10 @@ namespace StocksAndFinance
             {
                 if(Users.Login(txtLoginEmail.Text, txtLoginPassword.Text))
                 {
-                    //Load main form? 
                     this.Hide();
                     Forms.MainForm MainPage = new Forms.MainForm();
                     MainPage.ShowDialog();
                     MainPage.Show();
-                    //temp code for testing
-                    //MessagePrompt prompt = new MessagePrompt("Successful Login!");
-                    //prompt.ShowDialog();
                 }
                 else
                 {
