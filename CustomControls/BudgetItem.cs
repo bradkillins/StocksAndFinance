@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using StocksAndFinance.Forms;
+using System.Diagnostics;
 
 namespace StocksAndFinance
 {
@@ -117,22 +118,18 @@ namespace StocksAndFinance
             DbHandler.UpdateUsedAmount(progressValue, budgetId, userId);
             lblBudgetItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
             CheckBudget checker = new CheckBudget();
-            checker.budgetReachedEvent += SendEmail;
+            //checker.budgetReachedEvent += SendEmail;
             checker.budgetReachedEvent += PopUpBudgetReachedWarning;
             checker.BudgetCheck(progressValue, progressMax);
         }
-        private static void SendEmail(double used, double budget)
-        {
+        //private void SendEmail(double used, double budget)
+        //{
 
-        }
-        private static void PopUpBudgetReachedWarning(double used, double budget)
+        //}
+        private void PopUpBudgetReachedWarning(double used, double budget)
         {
-            //MessagePrompt prompt = new MessagePrompt($"Your Budget'{txtEmail.Text}' already exists!");
-            //if (prompt.ShowDialog() == DialogResult.OK)
-            //{
-            //    txtEmail.Focus();
-            //    txtEmail.Text = String.Empty;
-            //}
+            MessagePrompt prompt = new MessagePrompt($"Your ${budget} budget for {lblBudgetItem.Text} this {lblTimePeriod.Text} time period has been reached!");
+            prompt.Show();
         }
         private void iconButtonMinus_Click(object sender, EventArgs e)
         {
@@ -161,6 +158,7 @@ public class CheckBudget
     public event budgetReached budgetReachedEvent;
     public void BudgetCheck(double used, double budget)
     {
+        Debug.WriteLine(used.ToString() + budget.ToString());
         if (used == budget)
         {
             budgetReachedEvent(used, budget);
