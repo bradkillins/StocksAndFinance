@@ -118,14 +118,14 @@ namespace StocksAndFinance
             DbHandler.UpdateUsedAmount(progressValue, budgetId, userId);
             lblBudgetItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
             CheckBudget checker = new CheckBudget();
-            //checker.budgetReachedEvent += SendEmail;
+            checker.budgetReachedEvent += SendEmail;
             checker.budgetReachedEvent += PopUpBudgetReachedWarning;
             checker.BudgetCheck(progressValue, progressMax);
         }
-        //private void SendEmail(double used, double budget)
-        //{
-
-        //}
+        private void SendEmail(double used, double budget)
+        {
+            EmailSender.SendEmail(Users.currentUser.Email, $"your budget {lblTitle} was reached, Congratulations");
+        }
         private void PopUpBudgetReachedWarning(double used, double budget)
         {
             MessagePrompt prompt = new MessagePrompt($"Your ${budget} budget for {lblBudgetItem.Text} this {lblTimePeriod.Text} time period has been reached!");
