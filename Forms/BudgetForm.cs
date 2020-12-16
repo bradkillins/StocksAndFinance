@@ -64,6 +64,7 @@ namespace StocksAndFinance
         //Create and display BudgetItem Controls
         public void CreateBudgetItems()
         {
+            panelMain.Controls.Clear();
             int xPosBudgetItem = 10;
             int yPosBudgetItem = 10;
             //Create a budget item user control for each of the current users budget items

@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Diagnostics;
 namespace StocksAndFinance
 {
     public partial class Login : Form
@@ -28,15 +28,17 @@ namespace StocksAndFinance
 
         private void Login_Click(object sender, EventArgs e)
         {
+            Debug.WriteLine("OPENING");
             if (ValidateChildren())
             {
                 if(Users.Login(txtLoginEmail.Text, txtLoginPassword.Text))
                 {
                     //Load main form? 
                     this.Hide();
-                    Forms.MainForm MainPage = new Forms.MainForm();
+                    Forms.MainForm MainPage = new Forms.MainForm(this);
+
                     MainPage.ShowDialog();
-                    MainPage.Show();
+
                     //temp code for testing
                     //MessagePrompt prompt = new MessagePrompt("Successful Login!");
                     //prompt.ShowDialog();
