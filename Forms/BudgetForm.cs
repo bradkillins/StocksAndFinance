@@ -15,16 +15,17 @@ namespace StocksAndFinance.Forms
     public partial class BudgetForm : Form
     {
         public static BudgetForm CurrentBudgetForm;
+        public static Panel MainPanel;
+        public static int BudgetStep;
         private Form CurrentChildForm;
         private User CurrentUser;
-        int xPosBudgetItem = 10;
-        int yPosBudgetItem = 10;
         public BudgetForm(User user)
         {
             InitializeComponent();
             CurrentUser = user;
-            //Allow access to MyAddressbook form from child forms
+            //Allow access to CurrentBudgetForm in child forms
             CurrentBudgetForm = this;
+            MainPanel = panelMain;
         }
 
        // Open Child form in main panel of BudgetForm
@@ -53,8 +54,8 @@ namespace StocksAndFinance.Forms
         private void ChangeCreateItemColorOnMouseeEnter(object sender, EventArgs e)
         {
             var currentBtn = (IconButton)sender;
-            currentBtn.IconColor = Color.Green;
-            currentBtn.ForeColor = Color.Green;
+            currentBtn.IconColor = Color.LightGreen;
+            currentBtn.ForeColor = Color.LightGreen;
         }
 
         private void BudgetForm_Load(object sender, EventArgs e)
@@ -62,11 +63,13 @@ namespace StocksAndFinance.Forms
             CreateBudgetItems();
         }
         //Create and display BudgetItem Controls
-        private void CreateBudgetItems()
+        public void CreateBudgetItems()
         {
+            int xPosBudgetItem = 10;
+            int yPosBudgetItem = 10;
             //Create a budget item user control for each of the current users budget items
             foreach (Budget item in CurrentUser.Budgets)
-            {
+            {  
                 pnlBudgetItem budgetItem = new pnlBudgetItem(item.Name, item.BudgetAmount, item.UsedAmount, item.UsedAmount.ToString(), item.BudgetAmount.ToString(), item.TimePeriod.ToString(), item.BudgetId, CurrentUser.UserId);
 
                 budgetItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
@@ -81,6 +84,11 @@ namespace StocksAndFinance.Forms
         {
             CreateBudget newBudget = new CreateBudget(CurrentUser);
             BudgetForm.CurrentBudgetForm.OpenChildForm(newBudget);
+        }
+
+        private void budgetStep_ValueChanged(object sender, EventArgs e)
+        {
+            BudgetStep = (int)budgetStepBox.Value;
         }
     }
 }

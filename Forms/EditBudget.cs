@@ -46,8 +46,9 @@ namespace StocksAndFinance.Forms
             {
                 DbHandler.UpdateBudget(txtBudgetName.Text, cmbTimePeriod.SelectedItem.ToString().ToCharArray()[0], double.Parse(txtUsedAmount.Text), double.Parse(txtBudgetAmount.Text), currentUserId, currentBudgetId);
                 currentForm.Close();
-                BudgetForm.CurrentBudgetForm.Refresh();
-            }         
+            }
+            BudgetForm.MainPanel.Controls.Clear();
+            BudgetForm.CurrentBudgetForm.CreateBudgetItems();
         }
     }
 }

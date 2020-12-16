@@ -75,7 +75,7 @@ namespace StocksAndFinance.CustomControls
             this.progressBarBudget.ForeColor = System.Drawing.Color.Green;
             this.progressBarBudget.Location = new System.Drawing.Point(17, 48);
             this.progressBarBudget.Name = "progressBarBudget";
-            this.progressBarBudget.Size = new System.Drawing.Size(841, 10);
+            this.progressBarBudget.Size = new System.Drawing.Size(834, 10);
             this.progressBarBudget.TabIndex = 2;
             this.progressBarBudget.MouseEnter += new System.EventHandler(this.BudgetItem_MouseEnter);
             this.progressBarBudget.MouseLeave += new System.EventHandler(this.BudgetItem_MouseLeave);
@@ -92,7 +92,7 @@ namespace StocksAndFinance.CustomControls
             this.iconButtonEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonEdit.IconSize = 30;
             this.iconButtonEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButtonEdit.Location = new System.Drawing.Point(806, 0);
+            this.iconButtonEdit.Location = new System.Drawing.Point(799, 0);
             this.iconButtonEdit.Name = "iconButtonEdit";
             this.iconButtonEdit.Size = new System.Drawing.Size(37, 30);
             this.iconButtonEdit.TabIndex = 3;
@@ -113,7 +113,7 @@ namespace StocksAndFinance.CustomControls
             this.iconButtonDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonDelete.IconSize = 30;
             this.iconButtonDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButtonDelete.Location = new System.Drawing.Point(842, 0);
+            this.iconButtonDelete.Location = new System.Drawing.Point(835, 0);
             this.iconButtonDelete.Name = "iconButtonDelete";
             this.iconButtonDelete.Size = new System.Drawing.Size(30, 30);
             this.iconButtonDelete.TabIndex = 4;
@@ -185,11 +185,13 @@ namespace StocksAndFinance.CustomControls
             this.lblTimePeriod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTimePeriod.AutoSize = true;
             this.lblTimePeriod.Font = new System.Drawing.Font("Garamond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimePeriod.Location = new System.Drawing.Point(686, 1);
+            this.lblTimePeriod.Location = new System.Drawing.Point(679, 1);
             this.lblTimePeriod.Name = "lblTimePeriod";
             this.lblTimePeriod.Size = new System.Drawing.Size(109, 27);
             this.lblTimePeriod.TabIndex = 7;
             this.lblTimePeriod.Text = "Bi-Weekly";
+            this.lblTimePeriod.MouseEnter += new System.EventHandler(this.BudgetItem_MouseEnter);
+            this.lblTimePeriod.MouseLeave += new System.EventHandler(this.BudgetItem_MouseLeave);
             // 
             // pnlBudgetItem
             // 
@@ -205,7 +207,7 @@ namespace StocksAndFinance.CustomControls
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "pnlBudgetItem";
-            this.Size = new System.Drawing.Size(875, 75);
+            this.Size = new System.Drawing.Size(868, 75);
             this.MouseEnter += new System.EventHandler(this.BudgetItem_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.BudgetItem_MouseLeave);
             this.flowLayoutPanel1.ResumeLayout(false);

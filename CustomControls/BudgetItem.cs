@@ -15,6 +15,7 @@ namespace StocksAndFinance.CustomControls
     //User control that formats how budget data is displayed to the user
     public partial class pnlBudgetItem : UserControl
     {
+        
         public string lblTitle
         {
             get{return lblBudgetItem.Text;}
@@ -112,18 +113,38 @@ namespace StocksAndFinance.CustomControls
 
         private void iconButtonPlus_Click(object sender, EventArgs e)
         {
-            DbHandler.UpdateUsedAmount(++this.progressValue, budgetId, userId);
+            progressValue += BudgetForm.BudgetStep;
+            DbHandler.UpdateUsedAmount(progressValue, budgetId, userId);
             lblBudgetItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
+            CheckBudget checker = new CheckBudget();
+            checker.budgetReachedEvent += SendEmail;
+            checker.budgetReachedEvent += PopUpBudgetReachedWarning;
+            checker.BudgetCheck(progressValue, progressMax);
+        }
+        private static void SendEmail(double used, double budget)
+        {
+
+        }
+        private static void PopUpBudgetReachedWarning(double used, double budget)
+        {
+            //MessagePrompt prompt = new MessagePrompt($"Your Budget'{txtEmail.Text}' already exists!");
+            //if (prompt.ShowDialog() == DialogResult.OK)
+            //{
+            //    txtEmail.Focus();
+            //    txtEmail.Text = String.Empty;
+            //}
         }
         private void iconButtonMinus_Click(object sender, EventArgs e)
         {
-            DbHandler.UpdateUsedAmount(--this.progressValue, budgetId, userId);
+            progressValue -= BudgetForm.BudgetStep;
+            DbHandler.UpdateUsedAmount(progressValue, budgetId, userId);
             lblBudgetItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
         }
 
         private void iconButtonDelete_Click(object sender, EventArgs e)
         {
            DbHandler.DeleteBudget(budgetId, userId);
+            BudgetForm.MainPanel.Controls.Remove(this);
         }
 
         private void iconButtonEdit_Click(object sender, EventArgs e)
@@ -133,3 +154,18 @@ namespace StocksAndFinance.CustomControls
         }
     }
 }
+
+public class CheckBudget
+{
+    public delegate void budgetReached(double used, double budget);
+    public event budgetReached budgetReachedEvent;
+    public void BudgetCheck(double used, double budget)
+    {
+        if (used == budget)
+        {
+            budgetReachedEvent(used, budget);
+        }
+    }
+
+}
+

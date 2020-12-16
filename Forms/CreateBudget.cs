@@ -1,4 +1,5 @@
 ﻿using StocksAndFinance.Classes;
+using StocksAndFinance.CustomControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,8 +41,8 @@ namespace StocksAndFinance.Forms
                 DbHandler.InsertBudget(txtBudgetName.Text, cmbTimePeriod.SelectedItem.ToString().ToCharArray()[0], double.Parse(txtStartingAmount.Text, CultureInfo.InvariantCulture), double.Parse(txtBudgetAmount.Text, CultureInfo.InvariantCulture), currentUser.UserId);
                 currentForm.Close();
             }
-            
-            //BudgetForm.CurrentBudgetForm.Refresh();
+            BudgetForm.MainPanel.Controls.Clear();
+            BudgetForm.CurrentBudgetForm.CreateBudgetItems();
         }
     }
 }
