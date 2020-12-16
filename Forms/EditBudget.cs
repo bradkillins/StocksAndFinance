@@ -1,6 +1,4 @@
-﻿using StocksAndFinance.Classes;
-using StocksAndFinance.CustomControls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

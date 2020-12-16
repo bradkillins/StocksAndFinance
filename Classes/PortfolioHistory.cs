@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StocksAndFinance
 {
-    class PortfolioHistory
+    public class PortfolioHistory
     {
         public int PortHistoryId { get; set; }
         public DateTime Date { get; set; }

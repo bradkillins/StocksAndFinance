@@ -1,5 +1,4 @@
-﻿
-namespace StocksAndFinance.Forms
+﻿namespace StocksAndFinance
 {
     partial class CreateBudget
     {

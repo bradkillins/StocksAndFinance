@@ -9,7 +9,7 @@ namespace StocksAndFinance
     /// <summary>
     /// User object
     /// 
-    /// modeled to hold all the values from the database User object.
+    /// Modeled to hold all the values from the database User object.
     /// contains a list of stocks from the Stock table that contains the user's ID
     /// contains a list of Goals from the Goal table that contains the user's ID
     /// contains a list of budget form the buget table that contains the user's ID
@@ -32,6 +32,7 @@ namespace StocksAndFinance
         public List<Stock> Stocks { get; set; }
         public List<Goal> Goals { get; set; }
         public List<Budget> Budgets { get; set; }
+        public List<PortfolioHistory> PortfolioHistory { get; set; }
 
         public User(int UserId, string Email, string FirstName, string LastName, string Password, char Type)
         {
@@ -45,12 +46,28 @@ namespace StocksAndFinance
             Goals = DbHandler.SelectGoals(UserId);
             Budgets = DbHandler.SelectBudgets(UserId);
             Stocks = DbHandler.SelectStocks(UserId);
+            PortfolioHistory = DbHandler.SelectPortfolioHistory(UserId);
+            PortfolioHistory = PortfolioHistory.OrderByDescending(x => x.Date).ToList();
         }
+
         //force stock list to be set again.
         public void setStock()
         {
             Stocks = null;
             Stocks = DbHandler.SelectStocks(UserId);
         }
+
+        public double CalculatePortfolioPercentDiff(int numOfWeeks)
+        {
+            if (numOfWeeks > PortfolioHistory.Count)
+                numOfWeeks = PortfolioHistory.Count;
+            double totalDiff = 0;
+            for (int i = 0; i < numOfWeeks; i++)
+            {
+                totalDiff += PortfolioHistory[i].PercentDiff;
+            }
+            return totalDiff;
+        }
+
     }
 }

@@ -8,9 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
-using StocksAndFinance.CustomControls;
 
-namespace StocksAndFinance.Forms
+namespace StocksAndFinance
 {
     public partial class BudgetForm : Form
     {

@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
-namespace StocksAndFinance.Classes
+
+namespace StocksAndFinance
 {
     public static class EmailSender
     {

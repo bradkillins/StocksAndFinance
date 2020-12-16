@@ -1,4 +1,4 @@
-﻿namespace StocksAndFinance.Forms
+﻿namespace StocksAndFinance
 {
     partial class Leaderboard
     {
@@ -28,30 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNumOfWeeks = new System.Windows.Forms.Label();
+            this.pnlLeaderList = new System.Windows.Forms.Panel();
+            this.NumOfWeeks = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.NumOfWeeks)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblNumOfWeeks
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(181, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.lblNumOfWeeks.AutoSize = true;
+            this.lblNumOfWeeks.Location = new System.Drawing.Point(484, 57);
+            this.lblNumOfWeeks.Name = "lblNumOfWeeks";
+            this.lblNumOfWeeks.Size = new System.Drawing.Size(272, 23);
+            this.lblNumOfWeeks.TabIndex = 0;
+            this.lblNumOfWeeks.Text = "Number of Weeks to Compare:";
+            // 
+            // pnlLeaderList
+            // 
+            this.pnlLeaderList.AutoScroll = true;
+            this.pnlLeaderList.Location = new System.Drawing.Point(12, 124);
+            this.pnlLeaderList.Name = "pnlLeaderList";
+            this.pnlLeaderList.Size = new System.Drawing.Size(889, 514);
+            this.pnlLeaderList.TabIndex = 1;
+            // 
+            // NumOfWeeks
+            // 
+            this.NumOfWeeks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.NumOfWeeks.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.NumOfWeeks.Location = new System.Drawing.Point(773, 55);
+            this.NumOfWeeks.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NumOfWeeks.Name = "NumOfWeeks";
+            this.NumOfWeeks.Size = new System.Drawing.Size(59, 29);
+            this.NumOfWeeks.TabIndex = 2;
+            this.NumOfWeeks.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Leaderboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(913, 650);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.NumOfWeeks);
+            this.Controls.Add(this.pnlLeaderList);
+            this.Controls.Add(this.lblNumOfWeeks);
             this.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Leaderboard";
             this.Text = "Leaderboard";
+            ((System.ComponentModel.ISupportInitialize)(this.NumOfWeeks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -59,6 +92,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNumOfWeeks;
+        private System.Windows.Forms.Panel pnlLeaderList;
+        private System.Windows.Forms.NumericUpDown NumOfWeeks;
     }
 }

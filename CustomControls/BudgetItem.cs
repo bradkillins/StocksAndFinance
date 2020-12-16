@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using StocksAndFinance.Forms;
 
-namespace StocksAndFinance.CustomControls
+namespace StocksAndFinance
 {
     //User control that formats how budget data is displayed to the user
     public partial class pnlBudgetItem : UserControl

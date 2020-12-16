@@ -1,4 +1,4 @@
-﻿namespace StocksAndFinance.CustomControls
+﻿namespace StocksAndFinance
 {
     partial class StockControl
     {
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.crtStocks = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnChangeShare = new System.Windows.Forms.Button();
@@ -56,12 +55,9 @@
             this.crtStocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(115)))), ((int)(((byte)(131)))));
             chartArea1.Name = "ChartArea1";
             this.crtStocks.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.crtStocks.Legends.Add(legend1);
             this.crtStocks.Location = new System.Drawing.Point(39, 24);
             this.crtStocks.Name = "crtStocks";
             series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.crtStocks.Series.Add(series1);
             this.crtStocks.Size = new System.Drawing.Size(786, 289);

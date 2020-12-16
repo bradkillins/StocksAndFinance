@@ -7,11 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using StocksAndFinance.Classes;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Diagnostics;
 
-namespace StocksAndFinance.CustomControls
+namespace StocksAndFinance
 {
     public partial class StockControl : UserControl
     {

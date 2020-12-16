@@ -55,7 +55,8 @@
             this.Controls.Add(this.pnlMaincontent);
             this.Controls.Add(this.pnlWidget);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Stocks and Finance";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 

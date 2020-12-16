@@ -1,5 +1,4 @@
-﻿
-namespace StocksAndFinance.CustomControls
+﻿namespace StocksAndFinance
 {
     partial class pnlBudgetItem
     {

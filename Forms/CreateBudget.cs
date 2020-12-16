@@ -1,6 +1,4 @@
-﻿using StocksAndFinance.Classes;
-using StocksAndFinance.CustomControls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StocksAndFinance.Forms
+namespace StocksAndFinance
 {
     public partial class CreateBudget : Form
     {

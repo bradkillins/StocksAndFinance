@@ -72,6 +72,14 @@ namespace StocksAndFinance
             }
         }
 
+        public static List<PortfolioHistory> SelectPortfolioHistory(int userId)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectString))
+            {
+                return dbConnection.Query<PortfolioHistory>($"SELECT * FROM PortfolioHistory WHERE UserId = '{userId}'").ToList();
+            }
+        }
+
         public static void InsertBudget(string budgetTitle, char timePeriod, double usedAmount, double budgetAmount, int userId)
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnectString))
@@ -84,21 +92,21 @@ namespace StocksAndFinance
         }
         public static void UpdateUsedAmount(double usedAmount, int budgetId, int userId)
         {
-            using (IDbConnection dbConnection = new SqlConnection(ConnecString))
+            using (IDbConnection dbConnection = new SqlConnection(ConnectString))
             {
                 dbConnection.Execute($"UPDATE Budgets SET UsedAmount=@usedAmount WHERE UserId = @userId AND BudgetId = @budgetId", new { usedAmount, budgetId, userId });
             }
         }
         public static void UpdateBudget(string budgetTitle, char timePeriod, double usedAmount, double budgetAmount, int userId, int budgetId)
         {
-            using (IDbConnection dbConnection = new SqlConnection(ConnecString))
+            using (IDbConnection dbConnection = new SqlConnection(ConnectString))
             {
                 dbConnection.Execute($"UPDATE Budgets SET Name = @budgetTitle, TimePeriod = @timePeriod, UsedAmount = @usedAmount, BudgetAmount = budgetAmount, UserId = @userId WHERE UserId = @userId AND BudgetId = @budgetId", new { budgetTitle, timePeriod, usedAmount, budgetAmount, userId, budgetId });
             }
         }
         public static void DeleteBudget(int budgetId, int userId)
         {
-            using (IDbConnection dbConnection = new SqlConnection(ConnecString))
+            using (IDbConnection dbConnection = new SqlConnection(ConnectString))
             {
                 dbConnection.Execute($"DELETE FROM Budgets WHERE UserId = @userId AND BudgetId = @budgetId", new { budgetId, userId });
             }
