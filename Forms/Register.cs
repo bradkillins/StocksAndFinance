@@ -26,7 +26,6 @@ namespace StocksAndFinance
             btnCancel.Click += Cancel_Click;
             btnRegister.Click += Register_Click;
             Load += Register_Load;
-            
         }
 
         private void Register_Load(object sender, EventArgs e)
