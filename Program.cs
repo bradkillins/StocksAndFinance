@@ -15,10 +15,7 @@ namespace StocksAndFinance
         static void Main()
         {
             Validators.SetupErrorProvidor(); //probably a better place for this....
-            List<User> list = Users.users;
-
-            //Check out the users variable in debugging mode :)
-            //List<User> users = DbHandler.SelectAllUsers();
+            //List<User> list = Users.users;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

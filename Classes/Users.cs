@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Diagnostics;
 namespace StocksAndFinance
 {
     public static class Users
@@ -13,6 +13,7 @@ namespace StocksAndFinance
 
         public static bool Login(string email, string password)
         {
+            Debug.WriteLine(email + "  " + password);
             foreach (var user in users)
             {
                 if (user.Email == email && user.Password == password)
