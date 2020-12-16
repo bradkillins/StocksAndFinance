@@ -48,24 +48,57 @@ namespace StocksAndFinance.CustomControls
 
         private void btnChangeEmail_Click(object sender, EventArgs e)
         {
-            lblErrorEmail.Text = "";
+            lblInvalidEmailEntry.Text = "";
             string newEmail = txtEmail.Text;
             try
             {
                 //confirm emailAddress is correct.
                 MailAddress FormatedAddress = new MailAddress(newEmail);
                 DbHandler.ChangeEmail(currentUser.UserId, FormatedAddress.Address);
+                //update current user
+                Users.currentUser.Email = newEmail;
+                //update local user on profile page.
+                currentUser = Users.currentUser;
             }
             catch
             {
-                lblErrorEmail.Text = "Email is incorrectly formated";
+                txtEmail.Text = currentUser.Email;
+                lblInvalidEmailEntry.Text = "Email is incorrectly formated";
             }
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
+            //remove errorbox
+            lblInvalidPassword.Text = "";
+
             string newPass = txtPassword.Text;
-            DbHandler.ChangePass(currentUser.UserId, newPass);
+            //change pass
+            if (ValidatePassword(newPass))
+            {
+                //update database
+                DbHandler.ChangePass(currentUser.UserId, newPass);
+                //update current user
+                Users.currentUser.Password = newPass;
+                //update local user on profile page.
+                currentUser = Users.currentUser;
+            }
+            else //reset Pass and pop error
+            {
+                lblInvalidPassword.Text = "Password Must be 6 Characters long";
+                txtPassword.Text = Users.currentUser.Password;
+            }
         }
+
+        private bool ValidatePassword(string password)
+        {
+            bool valid = true;
+            if(password.Length < 6)
+            {
+                valid = false;
+            }
+            return valid;
+        }
+
     }
 }

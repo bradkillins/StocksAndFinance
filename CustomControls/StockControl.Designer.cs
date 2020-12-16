@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.crtStocks = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnChangeShare = new System.Windows.Forms.Button();
             this.lblShares = new System.Windows.Forms.Label();
@@ -53,13 +53,13 @@
             // crtStocks
             // 
             this.crtStocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(115)))), ((int)(((byte)(131)))));
-            chartArea4.Name = "ChartArea1";
-            this.crtStocks.ChartAreas.Add(chartArea4);
+            chartArea1.Name = "ChartArea1";
+            this.crtStocks.ChartAreas.Add(chartArea1);
             this.crtStocks.Location = new System.Drawing.Point(39, 24);
             this.crtStocks.Name = "crtStocks";
-            series4.ChartArea = "ChartArea1";
-            series4.Name = "Series1";
-            this.crtStocks.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Name = "Series1";
+            this.crtStocks.Series.Add(series1);
             this.crtStocks.Size = new System.Drawing.Size(786, 289);
             this.crtStocks.TabIndex = 0;
             this.crtStocks.Text = "chart1";
@@ -77,11 +77,11 @@
             // lblShares
             // 
             this.lblShares.AutoSize = true;
-            this.lblShares.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShares.ForeColor = System.Drawing.Color.Coral;
+            this.lblShares.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblShares.ForeColor = System.Drawing.Color.Snow;
             this.lblShares.Location = new System.Drawing.Point(35, 376);
             this.lblShares.Name = "lblShares";
-            this.lblShares.Size = new System.Drawing.Size(74, 24);
+            this.lblShares.Size = new System.Drawing.Size(84, 23);
             this.lblShares.TabIndex = 34;
             this.lblShares.Text = "Shares:";
             // 
@@ -95,11 +95,11 @@
             // lblStocks
             // 
             this.lblStocks.AutoSize = true;
-            this.lblStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStocks.ForeColor = System.Drawing.Color.Coral;
+            this.lblStocks.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblStocks.ForeColor = System.Drawing.Color.Snow;
             this.lblStocks.Location = new System.Drawing.Point(35, 336);
             this.lblStocks.Name = "lblStocks";
-            this.lblStocks.Size = new System.Drawing.Size(70, 24);
+            this.lblStocks.Size = new System.Drawing.Size(81, 23);
             this.lblStocks.TabIndex = 32;
             this.lblStocks.Text = "Stocks:";
             // 
@@ -119,22 +119,22 @@
             // lblAddStock
             // 
             this.lblAddStock.AutoSize = true;
-            this.lblAddStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddStock.ForeColor = System.Drawing.Color.Red;
+            this.lblAddStock.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAddStock.ForeColor = System.Drawing.Color.Snow;
             this.lblAddStock.Location = new System.Drawing.Point(39, 442);
             this.lblAddStock.Name = "lblAddStock";
-            this.lblAddStock.Size = new System.Drawing.Size(105, 24);
+            this.lblAddStock.Size = new System.Drawing.Size(119, 23);
             this.lblAddStock.TabIndex = 36;
             this.lblAddStock.Text = "Add Stocks";
             // 
             // lblSymbol
             // 
             this.lblSymbol.AutoSize = true;
-            this.lblSymbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSymbol.ForeColor = System.Drawing.Color.Coral;
+            this.lblSymbol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblSymbol.ForeColor = System.Drawing.Color.Snow;
             this.lblSymbol.Location = new System.Drawing.Point(39, 486);
             this.lblSymbol.Name = "lblSymbol";
-            this.lblSymbol.Size = new System.Drawing.Size(79, 24);
+            this.lblSymbol.Size = new System.Drawing.Size(83, 23);
             this.lblSymbol.TabIndex = 37;
             this.lblSymbol.Text = "Symbol";
             // 
@@ -155,11 +155,11 @@
             // lblAddShares
             // 
             this.lblAddShares.AutoSize = true;
-            this.lblAddShares.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddShares.ForeColor = System.Drawing.Color.Coral;
+            this.lblAddShares.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAddShares.ForeColor = System.Drawing.Color.Snow;
             this.lblAddShares.Location = new System.Drawing.Point(39, 515);
             this.lblAddShares.Name = "lblAddShares";
-            this.lblAddShares.Size = new System.Drawing.Size(75, 24);
+            this.lblAddShares.Size = new System.Drawing.Size(77, 23);
             this.lblAddShares.TabIndex = 40;
             this.lblAddShares.Text = "Shares";
             // 
@@ -206,11 +206,11 @@
             // lblInterval
             // 
             this.lblInterval.AutoSize = true;
-            this.lblInterval.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInterval.ForeColor = System.Drawing.Color.Coral;
-            this.lblInterval.Location = new System.Drawing.Point(385, 333);
+            this.lblInterval.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblInterval.ForeColor = System.Drawing.Color.Snow;
+            this.lblInterval.Location = new System.Drawing.Point(368, 333);
             this.lblInterval.Name = "lblInterval";
-            this.lblInterval.Size = new System.Drawing.Size(83, 24);
+            this.lblInterval.Size = new System.Drawing.Size(96, 23);
             this.lblInterval.TabIndex = 45;
             this.lblInterval.Text = "Interval:";
             // 
