@@ -20,7 +20,8 @@ namespace StocksAndFinance
                 {
                     currentUser = user;
                     return true;
-                }   
+                }
+
             }
             return false;
         }
