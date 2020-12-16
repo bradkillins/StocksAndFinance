@@ -26,6 +26,12 @@ namespace StocksAndFinance.Forms
             pnlMaincontent.Controls.Clear();
             pnlMaincontent.Controls.Add(userControl);
         }
+        public void SetMainpnl(Form form)
+        {
+            pnlMaincontent.Controls.Clear();
+            pnlMaincontent.Controls.Add(form);
+            form.Show();
+        }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -77,13 +77,29 @@ namespace StocksAndFinance.CustomControls
         }
         private void btnLeaderBoard_Click(object sender, EventArgs e)
         {
-
+            resetButtons();
+            Button leaderboardButton = new Button();
+            //disable this button
+            leaderboardButton.Enabled = false;
+            //change main panel to stocks.
+            Leaderboard leaderboard = new Leaderboard();
+            leaderboard.TopLevel = false;
+            leaderboard.AutoScroll = true;
+            mainForm.SetMainpnl(leaderboard);
         }
 
 
         private void btnBudget_Click(object sender, EventArgs e)
         {
-
+            resetButtons();
+            Button budgetButton = new Button();
+            //disable this button
+            budgetButton.Enabled = false;
+            //change main panel to stocks.
+            BudgetForm budgetForm = new BudgetForm();
+            budgetForm.TopLevel = false;
+            budgetForm.AutoScroll = true;
+            mainForm.SetMainpnl(budgetForm);
         }
 
         private void btnGoals_Click(object sender, EventArgs e)

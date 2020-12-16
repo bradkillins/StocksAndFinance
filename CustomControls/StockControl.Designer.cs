@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.crtStocks = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnChangeShare = new System.Windows.Forms.Button();
             this.lblShares = new System.Windows.Forms.Label();
@@ -53,13 +53,13 @@
             // crtStocks
             // 
             this.crtStocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(115)))), ((int)(((byte)(131)))));
-            chartArea1.Name = "ChartArea1";
-            this.crtStocks.ChartAreas.Add(chartArea1);
+            chartArea4.Name = "ChartArea1";
+            this.crtStocks.ChartAreas.Add(chartArea4);
             this.crtStocks.Location = new System.Drawing.Point(39, 24);
             this.crtStocks.Name = "crtStocks";
-            series1.ChartArea = "ChartArea1";
-            series1.Name = "Series1";
-            this.crtStocks.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Name = "Series1";
+            this.crtStocks.Series.Add(series4);
             this.crtStocks.Size = new System.Drawing.Size(786, 289);
             this.crtStocks.TabIndex = 0;
             this.crtStocks.Text = "chart1";
@@ -181,6 +181,7 @@
             this.btnInterval1y.TabIndex = 42;
             this.btnInterval1y.Text = "1Y";
             this.btnInterval1y.UseVisualStyleBackColor = true;
+            this.btnInterval1y.Click += new System.EventHandler(this.btnInterval1y_Click);
             // 
             // btnInterval6m
             // 
@@ -190,6 +191,7 @@
             this.btnInterval6m.TabIndex = 43;
             this.btnInterval6m.Text = "6m";
             this.btnInterval6m.UseVisualStyleBackColor = true;
+            this.btnInterval6m.Click += new System.EventHandler(this.btnInterval6m_Click);
             // 
             // btnInterval3m
             // 
@@ -199,6 +201,7 @@
             this.btnInterval3m.TabIndex = 44;
             this.btnInterval3m.Text = "3m";
             this.btnInterval3m.UseVisualStyleBackColor = true;
+            this.btnInterval3m.Click += new System.EventHandler(this.btnInterval3m_Click);
             // 
             // lblInterval
             // 
@@ -219,6 +222,7 @@
             this.btnInterval1m.TabIndex = 46;
             this.btnInterval1m.Text = "1m";
             this.btnInterval1m.UseVisualStyleBackColor = true;
+            this.btnInterval1m.Click += new System.EventHandler(this.btnInterval1m_Click);
             // 
             // StockControl
             // 
