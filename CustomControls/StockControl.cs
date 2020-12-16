@@ -15,6 +15,7 @@ namespace StocksAndFinance
     public partial class StockControl : UserControl
     {
         User user;
+        DateTime intervalDate = DateTime.Now.AddYears(-1); 
         public StockControl()
         {
             user = Users.currentUser;
@@ -45,18 +46,20 @@ namespace StocksAndFinance
             crtStocks.Series.Add(Symbol);
             crtStocks.Series[Symbol].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             crtStocks.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
-
+            crtStocks.Series[Symbol].BorderWidth = 3;
             //get stock from user that matches the symbol.
             Stock stock = user.Stocks.Find(userStock => userStock.Symbol == Symbol);
 
             //after user class is done with api call and data is set, get history
             List<StockHistory> history = stock.History;
 
-
-            for(int i = 0; i < history.Count; i++)
+            foreach(StockHistory hist in history)
             {
-                DateTime day = history[i].Date;
-                crtStocks.Series[stock.Symbol].Points.AddXY(day, history[i].Price);
+                if (hist.Date >= intervalDate)
+                {
+                    crtStocks.Series[stock.Symbol].Points.AddXY(hist.Date, hist.Price);
+
+                }
             }
         }
 
@@ -85,7 +88,6 @@ namespace StocksAndFinance
 
         private void cmbStocks_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Debug.WriteLine("KJHDFSKHJDSFHKLJDSFHKJL");
             ComboBox comboStock = (ComboBox)sender;
             //change Graph
             setGraph(comboStock.Text);
@@ -152,6 +154,30 @@ namespace StocksAndFinance
             }
             Debug.WriteLine("didn't fail");
             return true;
+        }
+        //change interval to 1 month
+        private void btnInterval1m_Click(object sender, EventArgs e)
+        {
+            intervalDate = DateTime.Now.AddMonths(-1);
+            setGraph(cmbStocks.Text);
+        }
+        //change interval to 3 months
+        private void btnInterval3m_Click(object sender, EventArgs e)
+        {
+            intervalDate = DateTime.Now.AddMonths(-3);
+            setGraph(cmbStocks.Text);
+        }
+        //change interval to 6 months
+        private void btnInterval6m_Click(object sender, EventArgs e)
+        {
+            intervalDate = DateTime.Now.AddMonths(-6);
+            setGraph(cmbStocks.Text);
+        }
+        //change interval to 1 year
+        private void btnInterval1y_Click(object sender, EventArgs e)
+        {
+            intervalDate = DateTime.Now.AddYears(-1);
+            setGraph(cmbStocks.Text);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace StocksAndFinance
         static void Main()
         {
             Validators.SetupErrorProvidor(); //probably a better place for this....
-            List<User> list = Users.users;
+            //List<User> list = Users.users;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
