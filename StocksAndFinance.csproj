@@ -86,7 +86,7 @@
     </Compile>
     <Compile Include="Forms\Leaderboard.Designer.cs">
       <DependentUpon>Leaderboard.cs</DependentUpon>
-
+    </Compile>
     <Compile Include="CustomControls\GoalsEntry.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +181,7 @@
 
     <EmbeddedResource Include="Forms\Leaderboard.resx">
       <DependentUpon>Leaderboard.cs</DependentUpon>
+    </EmbeddedResource>
 
     <EmbeddedResource Include="CustomControls\GoalsEntry.resx">
       <DependentUpon>GoalsEntry.cs</DependentUpon>
@@ -202,7 +203,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MessagePrompt.resx">
       <DependentUpon>MessagePrompt.cs</DependentUpon>
