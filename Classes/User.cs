@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace StocksAndFinance
 {
+    /// <summary>
+    /// User object
+    /// 
+    /// modeled to hold all the values from the database User object.
+    /// contains a list of stocks from the Stock table that contains the user's ID
+    /// contains a list of Goals from the Goal table that contains the user's ID
+    /// contains a list of budget form the buget table that contains the user's ID
+    /// 
+    /// </summary>
     public class User
     {
         public int UserId { get; set; }
@@ -35,6 +44,12 @@ namespace StocksAndFinance
 
             Goals = DbHandler.SelectGoals(UserId);
             Budgets = DbHandler.SelectBudgets(UserId);
+            Stocks = DbHandler.SelectStocks(UserId);
+        }
+        //force stock list to be set again.
+        public void setStock()
+        {
+            Stocks = null;
             Stocks = DbHandler.SelectStocks(UserId);
         }
     }

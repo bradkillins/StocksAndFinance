@@ -79,7 +79,7 @@ namespace StocksAndFinance.Forms
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(574, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 22);
+            this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Sort By:";
             // 
@@ -102,7 +102,7 @@ namespace StocksAndFinance.Forms
             this.iconButtonCreateBudgetItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonCreateBudgetItem.IconSize = 40;
             this.iconButtonCreateBudgetItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCreateBudgetItem.Location = new System.Drawing.Point(12, 36);
+            this.iconButtonCreateBudgetItem.Location = new System.Drawing.Point(12, 33);
             this.iconButtonCreateBudgetItem.Name = "iconButtonCreateBudgetItem";
             this.iconButtonCreateBudgetItem.Size = new System.Drawing.Size(229, 54);
             this.iconButtonCreateBudgetItem.TabIndex = 0;

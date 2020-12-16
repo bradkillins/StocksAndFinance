@@ -8,21 +8,24 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StocksAndFinance.Classes
+
+namespace StocksAndFinance
 {
     public static class Validators
     {
         static ErrorProvider error = new ErrorProvider();
+        static int iconPadding = 10;
 
         public static void SetupErrorProvidor()
         {
-            //error.Icon = Properties.Resources.errorIcon;
+            error.Icon = Properties.Resources.errorIcon;
         }
 
         public static void EmailValidating(object sender, CancelEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             Regex emailCheck = new Regex(@"^(([A-z0-9#$*+\-_])+(\.){0,1}([A-z0-9#$*+\-_])+)*(([A-z0-9#$*+\-_])+)*\@(([A-z0-9])+([A-z0-9\-])+([A-z0-9])+)*([A-z0-9])*\.[A-z]{2,}$");
+            error.SetIconPadding(textBox, iconPadding);
             if (emailCheck.IsMatch(textBox.Text))
             {
                 error.SetError(textBox, String.Empty);
@@ -38,6 +41,7 @@ namespace StocksAndFinance.Classes
         public static void PasswordValidating(object sender, CancelEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
+            error.SetIconPadding(textBox, iconPadding);
             if (textBox.Text.Length >= 6 && textBox.Text.Length <= 20)
             {
                 error.SetError(textBox, String.Empty);
@@ -53,6 +57,7 @@ namespace StocksAndFinance.Classes
         public static void NameValidating(object sender, CancelEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
+            error.SetIconPadding(textBox, iconPadding);
             if (String.IsNullOrEmpty(textBox.Text))
             {
                 error.SetError(textBox, "Name field cannot be empty.");
@@ -75,7 +80,8 @@ namespace StocksAndFinance.Classes
             Form parent = (Form)((TextBox)sender).Parent;
             TextBox password1 = (TextBox)parent.Controls["txtPassword"];
             TextBox password2 = (TextBox)parent.Controls["txtPasswordConfirm"];
-
+            error.SetIconPadding(password1, iconPadding);
+            error.SetIconPadding(password2, iconPadding);
             if (password1.Text != password2.Text)
             {
                 error.SetError(password2, "Passwords must match.");
