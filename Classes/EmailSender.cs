@@ -12,7 +12,7 @@ namespace StocksAndFinance
     {
         private static SmtpClient client = new SmtpClient();
         private static MailMessage message;
-        public static void SendEmail(string _userEmail,string _message)
+        public static void SendEmail(string _userEmail,string _message, string _subject = "No Subject",string _recieverName ="")
         {
             //set the smpt to be sent via the network
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -25,8 +25,13 @@ namespace StocksAndFinance
 
             //set up message to be sent.
             MailAddress from = new MailAddress("Kevin.SMPT@gmail.com", "BotMailForProject");
-            MailAddress to = new MailAddress(_userEmail, "Kevin Tran");
+            MailAddress to = new MailAddress(_userEmail, _recieverName);
             message = new MailMessage(from, to);
+            message.Body = _message;
+            message.Subject = _subject;
+            //Send
+            client.Send(message);
+
         }
     }
 }

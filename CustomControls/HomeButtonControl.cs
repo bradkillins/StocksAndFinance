@@ -19,15 +19,14 @@ namespace StocksAndFinance.CustomControls
         {
             InitializeComponent();
             this.mainForm = _mainForm;
+
         }
 
         private void HomeButtonControl_Load(object sender, EventArgs e)
         {
             pnlProfile.BorderStyle = BorderStyle.Fixed3D;
             Debug.WriteLine("my current directory is : " + Directory.GetCurrentDirectory() + "this is the end");
-            //profile image
-            profileImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            profileImage.Image = Image.FromFile("../../Resources/default.png");
+
             //Profile Name
             lblProfileName.Text = Users.currentUser.Name;
             //top logo
