@@ -14,5 +14,21 @@ namespace StocksAndFinance
         public char TimePeriod { get; set; }
         public double BudgetAmount { get; set; }
         public double UsedAmount { get; set; }
+
+        //Constructors
+        //public Budget(int budgetId, string name, char timePeriod, double budgetAmount, double UsedAmount)
+        //{
+        //    this.BudgetId = budgetId;
+        //    this.Name = name;
+        //    this.TimePeriod = timePeriod;
+        //    this.BudgetAmount = budgetAmount;
+        //    this.UsedAmount = UsedAmount;
+        //}
+        //public Budget(string name, char timePeriod, double budgetAmount)
+        //{
+        //    this.Name = name;
+        //    this.TimePeriod = timePeriod;
+        //    this.BudgetAmount = budgetAmount;
+        //}
     }
 }
