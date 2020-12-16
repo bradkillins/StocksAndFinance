@@ -33,10 +33,13 @@ namespace StocksAndFinance
                 if(Users.Login(txtLoginEmail.Text, txtLoginPassword.Text))
                 {
                     //Load main form? 
-
+                    this.Hide();
+                    Forms.MainForm MainPage = new Forms.MainForm();
+                    MainPage.ShowDialog();
+                    MainPage.Show();
                     //temp code for testing
-                    MessagePrompt prompt = new MessagePrompt("Successful Login!");
-                    prompt.ShowDialog();
+                    //MessagePrompt prompt = new MessagePrompt("Successful Login!");
+                    //prompt.ShowDialog();
                 }
                 else
                 {
@@ -62,6 +65,11 @@ namespace StocksAndFinance
             form.Left = 0;
             form.BringToFront();
             form.Show();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
