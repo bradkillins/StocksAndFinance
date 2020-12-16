@@ -31,13 +31,14 @@
             this.lblNumOfWeeks = new System.Windows.Forms.Label();
             this.pnlLeaderList = new System.Windows.Forms.Panel();
             this.NumOfWeeks = new System.Windows.Forms.NumericUpDown();
+            this.lblWeeklyUpdate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumOfWeeks)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNumOfWeeks
             // 
             this.lblNumOfWeeks.AutoSize = true;
-            this.lblNumOfWeeks.Location = new System.Drawing.Point(484, 57);
+            this.lblNumOfWeeks.Location = new System.Drawing.Point(518, 31);
             this.lblNumOfWeeks.Name = "lblNumOfWeeks";
             this.lblNumOfWeeks.Size = new System.Drawing.Size(272, 23);
             this.lblNumOfWeeks.TabIndex = 0;
@@ -46,16 +47,16 @@
             // pnlLeaderList
             // 
             this.pnlLeaderList.AutoScroll = true;
-            this.pnlLeaderList.Location = new System.Drawing.Point(12, 124);
+            this.pnlLeaderList.Location = new System.Drawing.Point(12, 78);
             this.pnlLeaderList.Name = "pnlLeaderList";
-            this.pnlLeaderList.Size = new System.Drawing.Size(889, 514);
+            this.pnlLeaderList.Size = new System.Drawing.Size(889, 520);
             this.pnlLeaderList.TabIndex = 1;
             // 
             // NumOfWeeks
             // 
             this.NumOfWeeks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.NumOfWeeks.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.NumOfWeeks.Location = new System.Drawing.Point(773, 55);
+            this.NumOfWeeks.Location = new System.Drawing.Point(807, 29);
             this.NumOfWeeks.Minimum = new decimal(new int[] {
             1,
             0,
@@ -70,11 +71,23 @@
             0,
             0});
             // 
+            // lblWeeklyUpdate
+            // 
+            this.lblWeeklyUpdate.AutoSize = true;
+            this.lblWeeklyUpdate.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWeeklyUpdate.Location = new System.Drawing.Point(316, 614);
+            this.lblWeeklyUpdate.Name = "lblWeeklyUpdate";
+            this.lblWeeklyUpdate.Size = new System.Drawing.Size(585, 18);
+            this.lblWeeklyUpdate.TabIndex = 3;
+            this.lblWeeklyUpdate.Text = "*Please note: The leaderboard info is only updated once a week, on Sunday nights." +
+    "";
+            // 
             // Leaderboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(913, 650);
+            this.Controls.Add(this.lblWeeklyUpdate);
             this.Controls.Add(this.NumOfWeeks);
             this.Controls.Add(this.pnlLeaderList);
             this.Controls.Add(this.lblNumOfWeeks);
@@ -95,5 +108,6 @@
         private System.Windows.Forms.Label lblNumOfWeeks;
         private System.Windows.Forms.Panel pnlLeaderList;
         private System.Windows.Forms.NumericUpDown NumOfWeeks;
+        private System.Windows.Forms.Label lblWeeklyUpdate;
     }
 }
