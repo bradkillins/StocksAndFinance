@@ -19,10 +19,10 @@ namespace StocksAndFinance.Forms
         public static int BudgetStep;
         private Form CurrentChildForm;
         private User CurrentUser;
-        public BudgetForm(User user)
+        public BudgetForm()
         {
             InitializeComponent();
-            CurrentUser = user;
+            CurrentUser = Users.currentUser;
             //Allow access to CurrentBudgetForm in child forms
             CurrentBudgetForm = this;
             MainPanel = panelMain;
