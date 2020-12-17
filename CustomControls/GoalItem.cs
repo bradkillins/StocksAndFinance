@@ -129,6 +129,7 @@ namespace StocksAndFinance
         private void PopUpGoalReachedWarning(double used, double goal)
         {
             MessagePrompt prompt = new MessagePrompt($"You have reached your financial goal of ${goal} for {lblGoalItem.Text}!");
+            prompt.StartPosition = FormStartPosition.CenterParent;
             prompt.Show();
         }
         private void iconButtonMinus_Click(object sender, EventArgs e)
