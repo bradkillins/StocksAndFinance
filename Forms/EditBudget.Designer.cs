@@ -45,7 +45,7 @@ namespace StocksAndFinance.Forms
             // 
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Garamond", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(430, 356);
+            this.btnUpdate.Location = new System.Drawing.Point(432, 382);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(300, 45);
             this.btnUpdate.TabIndex = 20;
@@ -56,7 +56,7 @@ namespace StocksAndFinance.Forms
             // cmbTimePeriod
             // 
             this.cmbTimePeriod.FormattingEnabled = true;
-            this.cmbTimePeriod.Location = new System.Drawing.Point(430, 183);
+            this.cmbTimePeriod.Location = new System.Drawing.Point(432, 209);
             this.cmbTimePeriod.Name = "cmbTimePeriod";
             this.cmbTimePeriod.Size = new System.Drawing.Size(300, 30);
             this.cmbTimePeriod.TabIndex = 17;
@@ -65,7 +65,7 @@ namespace StocksAndFinance.Forms
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(158, 300);
+            this.lblAmount.Location = new System.Drawing.Point(160, 326);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(210, 31);
             this.lblAmount.TabIndex = 15;
@@ -75,7 +75,7 @@ namespace StocksAndFinance.Forms
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(158, 180);
+            this.lblTime.Location = new System.Drawing.Point(160, 206);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(170, 31);
             this.lblTime.TabIndex = 14;
@@ -83,7 +83,7 @@ namespace StocksAndFinance.Forms
             // 
             // txtBudgetName
             // 
-            this.txtBudgetName.Location = new System.Drawing.Point(430, 123);
+            this.txtBudgetName.Location = new System.Drawing.Point(432, 149);
             this.txtBudgetName.Name = "txtBudgetName";
             this.txtBudgetName.Size = new System.Drawing.Size(300, 30);
             this.txtBudgetName.TabIndex = 13;
@@ -92,7 +92,7 @@ namespace StocksAndFinance.Forms
             // 
             this.lblBudgetName.AutoSize = true;
             this.lblBudgetName.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudgetName.Location = new System.Drawing.Point(158, 120);
+            this.lblBudgetName.Location = new System.Drawing.Point(160, 146);
             this.lblBudgetName.Name = "lblBudgetName";
             this.lblBudgetName.Size = new System.Drawing.Size(188, 31);
             this.lblBudgetName.TabIndex = 12;
@@ -102,7 +102,7 @@ namespace StocksAndFinance.Forms
             // 
             this.lblEditBudget.AutoSize = true;
             this.lblEditBudget.Font = new System.Drawing.Font("Garamond", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditBudget.Location = new System.Drawing.Point(143, 34);
+            this.lblEditBudget.Location = new System.Drawing.Point(145, 60);
             this.lblEditBudget.Name = "lblEditBudget";
             this.lblEditBudget.Size = new System.Drawing.Size(229, 45);
             this.lblEditBudget.TabIndex = 11;
@@ -112,7 +112,7 @@ namespace StocksAndFinance.Forms
             // 
             this.lblSpent.AutoSize = true;
             this.lblSpent.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpent.Location = new System.Drawing.Point(158, 240);
+            this.lblSpent.Location = new System.Drawing.Point(160, 266);
             this.lblSpent.Name = "lblSpent";
             this.lblSpent.Size = new System.Drawing.Size(190, 31);
             this.lblSpent.TabIndex = 21;
@@ -120,14 +120,14 @@ namespace StocksAndFinance.Forms
             // 
             // txtUsedAmount
             // 
-            this.txtUsedAmount.Location = new System.Drawing.Point(430, 240);
+            this.txtUsedAmount.Location = new System.Drawing.Point(432, 266);
             this.txtUsedAmount.Name = "txtUsedAmount";
             this.txtUsedAmount.Size = new System.Drawing.Size(300, 30);
             this.txtUsedAmount.TabIndex = 22;
             // 
             // txtBudgetAmount
             // 
-            this.txtBudgetAmount.Location = new System.Drawing.Point(430, 303);
+            this.txtBudgetAmount.Location = new System.Drawing.Point(432, 329);
             this.txtBudgetAmount.Name = "txtBudgetAmount";
             this.txtBudgetAmount.Size = new System.Drawing.Size(300, 30);
             this.txtBudgetAmount.TabIndex = 23;
