@@ -122,11 +122,7 @@ namespace StocksAndFinance.CustomControls
         {
 
             mainForm.Close();
-            Login parentLogin = ((MainForm)this.Parent.Parent).parentLogin;
-            parentLogin.Show();
-
-            Debug.WriteLine("Type of Parent = "+(this.Parent).GetType());
-            Debug.WriteLine("Type of Parent.Parent = " + (this.Parent.Parent).GetType());
+            
 
 
         }
