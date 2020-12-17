@@ -14,13 +14,10 @@ namespace StocksAndFinance
         [STAThread]
         static void Main()
         {
-            Validators.SetupErrorProvidor(); //probably a better place for this....
-            //List<User> list = Users.users;
-
+            Validators.SetupErrorProvidor();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
-            //Application.Run(new Leaderboard());
         }
     }
 }
