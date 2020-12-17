@@ -48,7 +48,6 @@ namespace StocksAndFinance.Forms
                 BudgetForm parentForm = (BudgetForm)this.Parent.Parent;
                 parentForm.CurrentUser = Users.currentUser;
                 parentForm.CreateBudgetItems();
-
                 currentForm.Close();
             }
 

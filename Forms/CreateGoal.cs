@@ -32,6 +32,10 @@ namespace StocksAndFinance
             if (ValidateChildren())
             {
                 DbHandler.InsertGoal(txtGoalName.Text, DueDate.Value, double.Parse(txtStartingAmount.Text, CultureInfo.InvariantCulture), double.Parse(txtGoalAmount.Text, CultureInfo.InvariantCulture), txtGoalDescription.Text, currentUser.UserId);
+                Users.currentUser.Goals = DbHandler.SelectGoals(Users.currentUser.UserId);
+                GoalForm parentForm = (GoalForm)this.Parent.Parent.Parent;
+                parentForm.CurrentUser = Users.currentUser;
+                parentForm.CreateGoalItems();
                 currentForm.Close();
             }
             GoalForm.MainPanel.Controls.Clear();

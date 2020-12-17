@@ -124,11 +124,15 @@ namespace StocksAndFinance
         }
         private void iconButtonPlus_Click(object sender, EventArgs e)
         {
+            //Update Progress on UI and Database
             progressValue += BudgetForm.BudgetStep;
             DbHandler.UpdateUsedAmount(progressValue, budgetId, userId);
+            //Update Static User
             Users.currentUser.Budgets = DbHandler.SelectBudgets(Users.currentUser.UserId);
+
             lblBudgetItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
             CheckBudget checker = new CheckBudget();
+
             checker.budgetReachedEvent += SendEmail;
             checker.budgetReachedEvent += PopUpBudgetReachedWarning;
             checker.BudgetCheck(progressValue, progressMax);

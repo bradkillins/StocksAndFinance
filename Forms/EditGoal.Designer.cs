@@ -47,14 +47,14 @@ namespace StocksAndFinance
             // 
             this.txtGoalAmount.Location = new System.Drawing.Point(441, 292);
             this.txtGoalAmount.Name = "txtGoalAmount";
-            this.txtGoalAmount.Size = new System.Drawing.Size(300, 30);
+            this.txtGoalAmount.Size = new System.Drawing.Size(300, 25);
             this.txtGoalAmount.TabIndex = 33;
             // 
             // txtUsedAmount
             // 
             this.txtUsedAmount.Location = new System.Drawing.Point(441, 229);
             this.txtUsedAmount.Name = "txtUsedAmount";
-            this.txtUsedAmount.Size = new System.Drawing.Size(300, 30);
+            this.txtUsedAmount.Size = new System.Drawing.Size(300, 25);
             this.txtUsedAmount.TabIndex = 32;
             // 
             // lblSpent
@@ -63,7 +63,7 @@ namespace StocksAndFinance
             this.lblSpent.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSpent.Location = new System.Drawing.Point(169, 229);
             this.lblSpent.Name = "lblSpent";
-            this.lblSpent.Size = new System.Drawing.Size(190, 31);
+            this.lblSpent.Size = new System.Drawing.Size(151, 25);
             this.lblSpent.TabIndex = 31;
             this.lblSpent.Text = "Amount Spent:";
             // 
@@ -77,6 +77,7 @@ namespace StocksAndFinance
             this.btnUpdate.TabIndex = 30;
             this.btnUpdate.Text = "Update Goal";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblAmount
             // 
@@ -84,7 +85,7 @@ namespace StocksAndFinance
             this.lblAmount.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmount.Location = new System.Drawing.Point(169, 289);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(179, 31);
+            this.lblAmount.Size = new System.Drawing.Size(143, 25);
             this.lblAmount.TabIndex = 28;
             this.lblAmount.Text = "Goal Amount:";
             // 
@@ -94,7 +95,7 @@ namespace StocksAndFinance
             this.lblTime.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.Location = new System.Drawing.Point(169, 169);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(135, 31);
+            this.lblTime.Size = new System.Drawing.Size(108, 25);
             this.lblTime.TabIndex = 27;
             this.lblTime.Text = "Due Date:";
             // 
@@ -102,7 +103,7 @@ namespace StocksAndFinance
             // 
             this.txtGoalName.Location = new System.Drawing.Point(441, 112);
             this.txtGoalName.Name = "txtGoalName";
-            this.txtGoalName.Size = new System.Drawing.Size(300, 30);
+            this.txtGoalName.Size = new System.Drawing.Size(300, 25);
             this.txtGoalName.TabIndex = 26;
             // 
             // lblGoalName
@@ -111,7 +112,7 @@ namespace StocksAndFinance
             this.lblGoalName.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGoalName.Location = new System.Drawing.Point(169, 109);
             this.lblGoalName.Name = "lblGoalName";
-            this.lblGoalName.Size = new System.Drawing.Size(188, 31);
+            this.lblGoalName.Size = new System.Drawing.Size(151, 25);
             this.lblGoalName.TabIndex = 25;
             this.lblGoalName.Text = "Budget Name:";
             // 
@@ -121,7 +122,7 @@ namespace StocksAndFinance
             this.lblEditGoal.Font = new System.Drawing.Font("Garamond", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditGoal.Location = new System.Drawing.Point(84, 29);
             this.lblEditGoal.Name = "lblEditGoal";
-            this.lblEditGoal.Size = new System.Drawing.Size(351, 45);
+            this.lblEditGoal.Size = new System.Drawing.Size(281, 36);
             this.lblEditGoal.TabIndex = 24;
             this.lblEditGoal.Text = "Edit Financial Goal";
             // 
@@ -129,7 +130,7 @@ namespace StocksAndFinance
             // 
             this.txtGoalDescription.Location = new System.Drawing.Point(441, 354);
             this.txtGoalDescription.Name = "txtGoalDescription";
-            this.txtGoalDescription.Size = new System.Drawing.Size(300, 30);
+            this.txtGoalDescription.Size = new System.Drawing.Size(300, 25);
             this.txtGoalDescription.TabIndex = 35;
             // 
             // lblGoalNote
@@ -138,7 +139,7 @@ namespace StocksAndFinance
             this.lblGoalNote.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGoalNote.Location = new System.Drawing.Point(169, 351);
             this.lblGoalNote.Name = "lblGoalNote";
-            this.lblGoalNote.Size = new System.Drawing.Size(223, 31);
+            this.lblGoalNote.Size = new System.Drawing.Size(176, 25);
             this.lblGoalNote.TabIndex = 34;
             this.lblGoalNote.Text = "Goal Description:";
             // 
@@ -146,7 +147,7 @@ namespace StocksAndFinance
             // 
             this.DueDate.Location = new System.Drawing.Point(441, 169);
             this.DueDate.Name = "DueDate";
-            this.DueDate.Size = new System.Drawing.Size(300, 30);
+            this.DueDate.Size = new System.Drawing.Size(300, 25);
             this.DueDate.TabIndex = 36;
             // 
             // EditGoal

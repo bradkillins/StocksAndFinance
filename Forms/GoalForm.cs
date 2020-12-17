@@ -17,7 +17,7 @@ namespace StocksAndFinance.Forms
         public static Panel MainPanel;
         public static int GoalStep;
         private Form CurrentChildForm;
-        private User CurrentUser;
+        public User CurrentUser;
         public GoalForm()
         {
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace StocksAndFinance.Forms
             //Allow access to CurrentGoalForm in child forms
             CurrentGoalForm = this;
             MainPanel = panelMain;
+            Load += GoalForm_Load;
         }
 
         // Open Child form in main panel of GoalForm
@@ -64,26 +65,26 @@ namespace StocksAndFinance.Forms
         //Create and display GoalItem Controls
         public void CreateGoalItems()
         {
+            panelMain.Controls.Clear();
             int xPosGoalItem = 10;
             int yPosGoalItem = 10;
             //Create a goal item user control for each of the current users goal items
             foreach (Goal item in CurrentUser.Goals)
             {
-               
-                pnlGoalItem goalItem = new pnlGoalItem(item.Name, item.GoalAmount, item.GoalProgress, item.GoalProgress.ToString(), item.GoalAmount.ToString(), item.DueDate, item.GoalId, CurrentUser.UserId);
+                pnlGoalItem goalItem = new pnlGoalItem(item.Name, item.Description,item.GoalAmount, item.GoalProgress, item.GoalProgress.ToString(), item.GoalAmount.ToString(), item.DueDate, item.GoalId, CurrentUser.UserId);
 
                 goalItem.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
                 panelMain.Controls.Add(goalItem);
                 goalItem.Location = new Point(xPosGoalItem, yPosGoalItem);
                 //space out the goal items
-                yPosGoalItem += 85;
+                yPosGoalItem += goalItem.Height +10;
             }
         }
 
         private void iconButtonCreateGoalItem_Click(object sender, EventArgs e)
         {
-            //CreateGoal newGoal = new CreateGoal(CurrentUser);
-            //GoalForm.CurrentGoalForm.OpenChildForm(newGoal);
+            CreateGoal newGoal = new CreateGoal(CurrentUser);
+            GoalForm.CurrentGoalForm.OpenChildForm(newGoal);
         }
 
         private void goalStep_ValueChanged(object sender, EventArgs e)

@@ -104,6 +104,20 @@ namespace StocksAndFinance
                 dbConnection.Execute($"UPDATE Budgets SET Name = @budgetTitle, TimePeriod = @timePeriod, UsedAmount = @usedAmount, BudgetAmount = @budgetAmount, UserId = @userId WHERE UserId = @userId AND BudgetId = @budgetId", new { budgetTitle, timePeriod, usedAmount, budgetAmount, userId, budgetId });
             }
         }
+        public static void UpdateUsedAmountGoals(double usedAmount, int goalId, int userId)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectString))
+            {
+                dbConnection.Execute($"UPDATE Goals SET GoalProgress=@usedAmount WHERE UserId = @userId AND GoalId = @goalId", new { usedAmount, goalId, userId });
+            }
+        }
+        public static void UpadateGoalsDate(int goalId, DateTime dueDate )
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectString))
+            {
+                dbConnection.Execute($"UPDATE Goals SET DueDate=@dueDate WHERE GoalId = @goalId", new { dueDate, goalId });
+            }
+        }
         public static void DeleteBudget(int budgetId, int userId)
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnectString))
@@ -111,6 +125,7 @@ namespace StocksAndFinance
                 dbConnection.Execute($"DELETE FROM Budgets WHERE UserId = @userId AND BudgetId = @budgetId", new { budgetId, userId });
             }
         }
+        
         public static void ChangeEmail(int userId, string email)
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnectString))
@@ -144,7 +159,7 @@ namespace StocksAndFinance
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnectString))
             {
-                dbConnection.Execute($"INSERT INTO Goals(Name, DueDate, GoalProgress, GoalAmount, Description, UserId) VALUES(@goalTitle, @timePeriod, @savedAmount, @goalAmount, @description, @userId)", new { goalTitle, dueDate, savedAmount, goalAmount, description, userId });
+                dbConnection.Execute($"INSERT INTO Goals(Name, DueDate, GoalProgress, GoalAmount, Description, UserId) VALUES(@goalTitle, @dueDate, @savedAmount, @goalAmount, @description, @userId)", new { goalTitle, dueDate, savedAmount, goalAmount, description, userId });
             }
         }
         public static void UpdateSavedAmount(double savedAmount, int budgetId, int userId)
@@ -158,7 +173,7 @@ namespace StocksAndFinance
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnectString))
             {
-                dbConnection.Execute($"UPDATE Goals SET Name = @goalTitle, DueDate = @timePeriod, GoalProgress = @savedAmount, GoalAmount = @goalAmount, Description = @description, UserId = @userId WHERE UserId = @userId AND GoalId = @goalId", new { goalTitle, dueDate, savedAmount, goalAmount, userId, goalId });
+                dbConnection.Execute($"UPDATE Goals SET Name = @goalTitle,Description = @description, DueDate = @dueDate, GoalProgress = @savedAmount, GoalAmount = @goalAmount,  UserId = @userId WHERE UserId = @userId AND GoalId = @goalId", new { goalTitle, description, dueDate, savedAmount, goalAmount, userId, goalId });
             }
         }
         public static void DeleteGoal(int goalId, int userId)

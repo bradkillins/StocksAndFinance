@@ -23,26 +23,14 @@ namespace StocksAndFinance
                 currentForm = this;
                 currentUserId = userId;
                 currentGoalId = goalId;
+
                 txtGoalName.Text = currentName;
                 txtUsedAmount.Text = currentUsed;
                 txtGoalAmount.Text = currentGoal;
-                //DueDate = dueDate;
 
-                //cmbTimePeriod.Text = currentTime;
-                //cmbTimePeriod.Items.Add("1 Week");
-                //cmbTimePeriod.Items.Add("2 Weeks");
-                //cmbTimePeriod.Items.Add("1 Month");
-                //cmbTimePeriod.Items.Add("3 Month");
-                //cmbTimePeriod.Items.Add("6 Month");
-                //cmbTimePeriod.Items.Add("1 Year");
-                //cmbTimePeriod.Items.Add("3 Year");
-                //cmbTimePeriod.Items.Add("5 Year");
-                //cmbTimePeriod.Items.Add("10 Year");
-                //cmbTimePeriod.Items.Add("25 Year");
-                //cmbTimePeriod.SelectedIndex = cmbTimePeriod.FindStringExact(currentTime);
                 FormClosing += Validators.ThisFormClosing;
                 txtGoalName.Validating += Validators.NameValidating;
-            txtGoalDescription.Validating += Validators.NameValidating;
+                txtGoalDescription.Validating += Validators.NameValidating;
                 txtGoalAmount.Validating += Validators.GoalAmountValidating;
                 txtUsedAmount.Validating += Validators.UsedAmountValidating;
                 //cmbTimePeriod.Validating += Validators.TimePeriodValidating;
@@ -52,11 +40,23 @@ namespace StocksAndFinance
             {
                 if (ValidateChildren())
                 {
-                    DbHandler.UpdateGoal(txtGoalName.Text, DueDate.Value, double.Parse(txtUsedAmount.Text), double.Parse(txtGoalAmount.Text), txtGoalDescription.Text, currentUserId, currentGoalId);
+                    DbHandler.UpdateGoal(txtGoalName.Text, 
+                                        DueDate.Value, 
+                                        double.Parse(txtUsedAmount.Text), 
+                                        double.Parse(txtGoalAmount.Text), 
+                                        txtGoalDescription.Text,
+                                        currentUserId, 
+                                        currentGoalId);
+                    //update static User
+                    Users.currentUser.Goals = DbHandler.SelectGoals(Users.currentUser.UserId);
+                    GoalForm parentForm = (GoalForm)this.Parent.Parent.Parent;
+                    parentForm.CurrentUser = Users.currentUser;
+                    //force parent to load
+                    parentForm.CreateGoalItems();
                     currentForm.Close();
                 }
-                GoalForm.MainPanel.Controls.Clear();
-                GoalForm.CurrentGoalForm.CreateGoalItems();
+                
+
             }
         private void EditGoal_Load(object sender, EventArgs e)
         {

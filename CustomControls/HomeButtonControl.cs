@@ -78,7 +78,7 @@ namespace StocksAndFinance.CustomControls
         {
             resetButtons();
             Users.currentUser.SetPortfolio();
-            Button leaderboardButton = new Button();
+            Button leaderboardButton = (Button)sender;
             //disable this button
             leaderboardButton.Enabled = false;
             //change main panel to stocks.
@@ -115,10 +115,28 @@ namespace StocksAndFinance.CustomControls
 
         private void btnGoals_Click(object sender, EventArgs e)
         {
-
+            resetButtons();
+            if (Users.currentUser.Type == 'P')
+            {
+                Button budgetButton = (Button)sender;
+                //disable this button
+                budgetButton.Enabled = false;
+                //change main panel to stocks.
+                GoalForm goalForm = new GoalForm();
+                goalForm.TopLevel = false;
+                goalForm.AutoScroll = true;
+                mainForm.SetMainpnl(goalForm);
+            }
+            else
+            {
+                MessagePrompt prompt = new MessagePrompt("Sorry but Free users don't have access.\nUpgrade please :)");
+                prompt.StartPosition = FormStartPosition.CenterParent;
+                prompt.ShowDialog();
+                resetButtons();
+            }
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
+            private void btnLogOut_Click(object sender, EventArgs e)
         {
 
             mainForm.Close();
