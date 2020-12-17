@@ -78,6 +78,7 @@ namespace StocksAndFinance.CustomControls
         private void btnLeaderBoard_Click(object sender, EventArgs e)
         {
             resetButtons();
+            Users.currentUser.SetPortfolio();
             Button leaderboardButton = new Button();
             //disable this button
             leaderboardButton.Enabled = false;
