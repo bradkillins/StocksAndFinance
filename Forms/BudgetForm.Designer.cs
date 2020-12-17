@@ -31,8 +31,6 @@
             this.panelTopBar = new System.Windows.Forms.Panel();
             this.lblBudgetStep = new System.Windows.Forms.Label();
             this.budgetStepBox = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.iconButtonCreateBudgetItem = new FontAwesome.Sharp.IconButton();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelTopBar.SuspendLayout();
@@ -43,8 +41,6 @@
             // 
             this.panelTopBar.Controls.Add(this.lblBudgetStep);
             this.panelTopBar.Controls.Add(this.budgetStepBox);
-            this.panelTopBar.Controls.Add(this.label1);
-            this.panelTopBar.Controls.Add(this.comboBox1);
             this.panelTopBar.Controls.Add(this.iconButtonCreateBudgetItem);
             this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopBar.Location = new System.Drawing.Point(0, 0);
@@ -57,38 +53,19 @@
             this.lblBudgetStep.AutoSize = true;
             this.lblBudgetStep.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBudgetStep.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblBudgetStep.Location = new System.Drawing.Point(351, 52);
+            this.lblBudgetStep.Location = new System.Drawing.Point(640, 52);
             this.lblBudgetStep.Name = "lblBudgetStep";
-            this.lblBudgetStep.Size = new System.Drawing.Size(143, 22);
+            this.lblBudgetStep.Size = new System.Drawing.Size(118, 18);
             this.lblBudgetStep.TabIndex = 4;
             this.lblBudgetStep.Text = "Set Budget Step";
             // 
             // budgetStepBox
             // 
-            this.budgetStepBox.Location = new System.Drawing.Point(500, 47);
+            this.budgetStepBox.Location = new System.Drawing.Point(789, 47);
             this.budgetStepBox.Name = "budgetStepBox";
-            this.budgetStepBox.Size = new System.Drawing.Size(68, 30);
+            this.budgetStepBox.Size = new System.Drawing.Size(68, 26);
             this.budgetStepBox.TabIndex = 3;
             this.budgetStepBox.ValueChanged += new System.EventHandler(this.budgetStep_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(574, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Sort By:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(656, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 33);
-            this.comboBox1.TabIndex = 1;
             // 
             // iconButtonCreateBudgetItem
             // 
@@ -145,8 +122,6 @@
 
         private System.Windows.Forms.Panel panelTopBar;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private FontAwesome.Sharp.IconButton iconButtonCreateBudgetItem;
         private System.Windows.Forms.Label lblBudgetStep;
         private System.Windows.Forms.NumericUpDown budgetStepBox;

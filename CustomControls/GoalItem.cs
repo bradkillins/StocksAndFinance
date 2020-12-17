@@ -53,9 +53,10 @@ namespace StocksAndFinance
         internal int goalId;
         internal int userId;
 
-        public pnlGoalItem(string lblTitle, double progressMax, double progressValue, string lblProgressValue, string lblProgressMax, DateTime lblDueDate, int currentGoalId, int currentUserId)
+        public pnlGoalItem(string lblTitle,string description, double progressMax, double progressValue, string lblProgressValue, string lblProgressMax, DateTime lblDueDate, int currentGoalId, int currentUserId)
         {
             InitializeComponent();
+            this.GoalDescription.Text = description;
             this.lblTitle = lblTitle;
             this.progressMax = progressMax;
             this.progressValue = progressValue;
@@ -64,26 +65,6 @@ namespace StocksAndFinance
             this.lblDue = lblDueDate;
             this.goalId = currentGoalId;
             this.userId = currentUserId;
-        }
-
-        //Change time value from database into human readable value
-        private string TimePeriod(string timeChar)
-        {
-            switch (timeChar)
-            {
-                case "W":
-                    return "Weekly";
-                case "B":
-                    return "Bi-Weekly";
-                case "M":
-                    return "Monthly";
-                case "Q":
-                    return "Quaterly";
-                case "Y":
-                    return "Yearly";
-                default:
-                    return "";
-            }
         }
 
         private void MouseEnterChangeIconColor(object sender, EventArgs e)
@@ -112,35 +93,50 @@ namespace StocksAndFinance
             this.BackColor = Color.FromArgb(40, 40, 40);
         }
 
-        private void iconButtonPlus_Click(object sender, EventArgs e)
-        {
-            progressValue += GoalForm.GoalStep;
-            DbHandler.UpdateUsedAmount(progressValue, goalId, userId);
-            lblGoalItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
-            CheckGoal checker = new CheckGoal();
-            //checker.goalReachedEvent += SendEmail;
-            checker.goalReachedEvent += PopUpGoalReachedWarning;
-            checker.GoalCheck(progressValue, progressMax);
-        }
-        //private void SendEmail(double used, double goal)
-        //{
 
-        //}
         private void PopUpGoalReachedWarning(double used, double goal)
         {
             MessagePrompt prompt = new MessagePrompt($"You have reached your financial goal of ${goal} for {lblGoalItem.Text}!");
             prompt.Show();
         }
+        private void iconButtonPlus_Click(object sender, EventArgs e)
+        {
+            //Update Goal on UI and Database
+            progressValue += GoalForm.GoalStep;
+            DbHandler.UpdateUsedAmountGoals(progressValue, goalId, userId);
+            //Update Static User
+            Users.currentUser.Goals = DbHandler.SelectGoals(Users.currentUser.UserId);
+            GoalForm parentForm = (GoalForm)this.Parent.Parent.Parent;
+            parentForm.CurrentUser = Users.currentUser;
+
+            lblGoalItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
+            CheckGoal checker = new CheckGoal();
+
+            checker.goalReachedEvent += PopUpGoalReachedWarning;
+            checker.GoalCheck(progressValue, progressMax);
+        }
         private void iconButtonMinus_Click(object sender, EventArgs e)
         {
             progressValue -= GoalForm.GoalStep;
-            DbHandler.UpdateUsedAmount(progressValue, goalId, userId);
+            DbHandler.UpdateUsedAmountGoals(progressValue, goalId, userId);
+
+            Users.currentUser.Goals = DbHandler.SelectGoals(Users.currentUser.UserId);
+            GoalForm parentForm = (GoalForm)this.Parent.Parent.Parent;
+            parentForm.CurrentUser = Users.currentUser;
+
             lblGoalItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
         }
 
         private void iconButtonDelete_Click(object sender, EventArgs e)
         {
             DbHandler.DeleteGoal(goalId, userId);
+
+            Users.currentUser.Goals = DbHandler.SelectGoals(Users.currentUser.UserId);
+
+            GoalForm parentForm = (GoalForm)this.Parent.Parent.Parent;
+            parentForm.CurrentUser = Users.currentUser;
+            parentForm.CreateGoalItems();
+
             GoalForm.MainPanel.Controls.Remove(this);
         }
 
@@ -152,8 +148,21 @@ namespace StocksAndFinance
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            if(this.Parent != null)
+            {
+                DateTimePicker datePiker = (DateTimePicker)sender;
+                DateTime newDate = datePiker.Value;
+                //send database update
+                DbHandler.UpadateGoalsDate(goalId, newDate);
+                //update static user
+                Users.currentUser.Goals = DbHandler.SelectGoals(Users.currentUser.UserId);
+                //update parent user.
+                GoalForm parentForm = (GoalForm)this.Parent.Parent.Parent;
+                parentForm.CurrentUser = Users.currentUser;
+                parentForm.CreateGoalItems();
+            }
         }
+  
     }
     public class CheckGoal
 {

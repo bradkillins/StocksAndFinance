@@ -31,7 +31,6 @@ namespace StocksAndFinance
         {
             this.progressBarGoal = new System.Windows.Forms.ProgressBar();
             this.lblGoalItem = new System.Windows.Forms.Label();
-            this.lblBudgetItemAmount = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.lblGoalItemAmount = new System.Windows.Forms.Label();
@@ -39,8 +38,6 @@ namespace StocksAndFinance
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.GoalDescription = new System.Windows.Forms.Label();
-            this.iconButtonMinus = new FontAwesome.Sharp.IconButton();
-            this.iconButtonPlus = new FontAwesome.Sharp.IconButton();
             this.iconButtonDelete = new FontAwesome.Sharp.IconButton();
             this.iconButtonEdit = new FontAwesome.Sharp.IconButton();
             this.DueDate = new System.Windows.Forms.DateTimePicker();
@@ -62,24 +59,12 @@ namespace StocksAndFinance
             // 
             this.lblGoalItem.AutoSize = true;
             this.lblGoalItem.Font = new System.Drawing.Font("Garamond", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGoalItem.Location = new System.Drawing.Point(12, 17);
+            this.lblGoalItem.Location = new System.Drawing.Point(13, 19);
             this.lblGoalItem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGoalItem.Name = "lblGoalItem";
-            this.lblGoalItem.Size = new System.Drawing.Size(224, 27);
+            this.lblGoalItem.Size = new System.Drawing.Size(177, 21);
             this.lblGoalItem.TabIndex = 8;
             this.lblGoalItem.Text = "Financial Goal Title:";
-            // 
-            // lblBudgetItemAmount
-            // 
-            this.lblBudgetItemAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBudgetItemAmount.AutoSize = true;
-            this.lblBudgetItemAmount.Font = new System.Drawing.Font("Garamond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudgetItemAmount.Location = new System.Drawing.Point(39, 8);
-            this.lblBudgetItemAmount.Name = "lblBudgetItemAmount";
-            this.lblBudgetItemAmount.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lblBudgetItemAmount.Size = new System.Drawing.Size(88, 32);
-            this.lblBudgetItemAmount.TabIndex = 9;
-            this.lblBudgetItemAmount.Text = "$0 of $1";
             // 
             // flowLayoutPanel1
             // 
@@ -123,7 +108,7 @@ namespace StocksAndFinance
             this.lblGoalItemAmount.Location = new System.Drawing.Point(39, 0);
             this.lblGoalItemAmount.Name = "lblGoalItemAmount";
             this.lblGoalItemAmount.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lblGoalItemAmount.Size = new System.Drawing.Size(88, 32);
+            this.lblGoalItemAmount.Size = new System.Drawing.Size(72, 26);
             this.lblGoalItemAmount.TabIndex = 1;
             this.lblGoalItemAmount.Text = "$0 of $1";
             // 
@@ -139,7 +124,7 @@ namespace StocksAndFinance
             this.iconButton2.IconColor = System.Drawing.Color.WhiteSmoke;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 20;
-            this.iconButton2.Location = new System.Drawing.Point(133, 3);
+            this.iconButton2.Location = new System.Drawing.Point(117, 3);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.iconButton2.Size = new System.Drawing.Size(30, 30);
@@ -156,7 +141,7 @@ namespace StocksAndFinance
             this.label2.Location = new System.Drawing.Point(12, 84);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 27);
+            this.label2.Size = new System.Drawing.Size(111, 21);
             this.label2.TabIndex = 17;
             this.label2.Text = "Description:";
             // 
@@ -174,47 +159,9 @@ namespace StocksAndFinance
             this.GoalDescription.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoalDescription.Location = new System.Drawing.Point(3, 0);
             this.GoalDescription.Name = "GoalDescription";
-            this.GoalDescription.Size = new System.Drawing.Size(93, 22);
+            this.GoalDescription.Size = new System.Drawing.Size(75, 18);
             this.GoalDescription.TabIndex = 0;
             this.GoalDescription.Text = "GoalNote";
-            // 
-            // iconButtonMinus
-            // 
-            this.iconButtonMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonMinus.FlatAppearance.BorderSize = 0;
-            this.iconButtonMinus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButtonMinus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.iconButtonMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonMinus.ForeColor = System.Drawing.Color.Transparent;
-            this.iconButtonMinus.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.iconButtonMinus.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.iconButtonMinus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonMinus.IconSize = 20;
-            this.iconButtonMinus.Location = new System.Drawing.Point(3, 11);
-            this.iconButtonMinus.Name = "iconButtonMinus";
-            this.iconButtonMinus.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.iconButtonMinus.Size = new System.Drawing.Size(30, 30);
-            this.iconButtonMinus.TabIndex = 13;
-            this.iconButtonMinus.UseVisualStyleBackColor = true;
-            // 
-            // iconButtonPlus
-            // 
-            this.iconButtonPlus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonPlus.FlatAppearance.BorderSize = 0;
-            this.iconButtonPlus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButtonPlus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.iconButtonPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonPlus.ForeColor = System.Drawing.Color.Transparent;
-            this.iconButtonPlus.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButtonPlus.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.iconButtonPlus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonPlus.IconSize = 20;
-            this.iconButtonPlus.Location = new System.Drawing.Point(133, 11);
-            this.iconButtonPlus.Name = "iconButtonPlus";
-            this.iconButtonPlus.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.iconButtonPlus.Size = new System.Drawing.Size(30, 30);
-            this.iconButtonPlus.TabIndex = 14;
-            this.iconButtonPlus.UseVisualStyleBackColor = true;
             // 
             // iconButtonDelete
             // 
@@ -264,7 +211,7 @@ namespace StocksAndFinance
             this.DueDate.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DueDate.Location = new System.Drawing.Point(593, 15);
             this.DueDate.Name = "DueDate";
-            this.DueDate.Size = new System.Drawing.Size(200, 30);
+            this.DueDate.Size = new System.Drawing.Size(200, 25);
             this.DueDate.TabIndex = 19;
             this.DueDate.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -278,9 +225,6 @@ namespace StocksAndFinance
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.progressBarGoal);
             this.Controls.Add(this.lblGoalItem);
-            this.Controls.Add(this.iconButtonMinus);
-            this.Controls.Add(this.lblBudgetItemAmount);
-            this.Controls.Add(this.iconButtonPlus);
             this.Controls.Add(this.iconButtonDelete);
             this.Controls.Add(this.iconButtonEdit);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,9 +244,6 @@ namespace StocksAndFinance
 
         private System.Windows.Forms.ProgressBar progressBarGoal;
         private System.Windows.Forms.Label lblGoalItem;
-        private FontAwesome.Sharp.IconButton iconButtonMinus;
-        private System.Windows.Forms.Label lblBudgetItemAmount;
-        private FontAwesome.Sharp.IconButton iconButtonPlus;
         private FontAwesome.Sharp.IconButton iconButtonDelete;
         private FontAwesome.Sharp.IconButton iconButtonEdit;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

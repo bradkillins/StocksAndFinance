@@ -35,8 +35,6 @@ namespace StocksAndFinance.Forms
             this.lblGoalStep = new System.Windows.Forms.Label();
             this.goalStepBox = new System.Windows.Forms.NumericUpDown();
             this.iconButtonCreateBudgetItem = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panelGoalsMain.SuspendLayout();
             this.panelTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goalStepBox)).BeginInit();
@@ -65,8 +63,6 @@ namespace StocksAndFinance.Forms
             // 
             this.panelTopBar.Controls.Add(this.lblGoalStep);
             this.panelTopBar.Controls.Add(this.goalStepBox);
-            this.panelTopBar.Controls.Add(this.label1);
-            this.panelTopBar.Controls.Add(this.comboBox1);
             this.panelTopBar.Controls.Add(this.iconButtonCreateBudgetItem);
             this.panelTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopBar.Location = new System.Drawing.Point(0, 0);
@@ -79,18 +75,19 @@ namespace StocksAndFinance.Forms
             this.lblGoalStep.AutoSize = true;
             this.lblGoalStep.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGoalStep.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblGoalStep.Location = new System.Drawing.Point(351, 52);
+            this.lblGoalStep.Location = new System.Drawing.Point(611, 54);
             this.lblGoalStep.Name = "lblGoalStep";
-            this.lblGoalStep.Size = new System.Drawing.Size(122, 22);
+            this.lblGoalStep.Size = new System.Drawing.Size(99, 18);
             this.lblGoalStep.TabIndex = 4;
             this.lblGoalStep.Text = "Set Goal Step";
             // 
             // goalStepBox
             // 
-            this.goalStepBox.Location = new System.Drawing.Point(500, 47);
+            this.goalStepBox.Location = new System.Drawing.Point(760, 49);
             this.goalStepBox.Name = "goalStepBox";
-            this.goalStepBox.Size = new System.Drawing.Size(68, 30);
+            this.goalStepBox.Size = new System.Drawing.Size(68, 25);
             this.goalStepBox.TabIndex = 3;
+            this.goalStepBox.ValueChanged += new System.EventHandler(this.goalStep_ValueChanged);
             // 
             // iconButtonCreateBudgetItem
             // 
@@ -107,28 +104,10 @@ namespace StocksAndFinance.Forms
             this.iconButtonCreateBudgetItem.Name = "iconButtonCreateBudgetItem";
             this.iconButtonCreateBudgetItem.Size = new System.Drawing.Size(229, 54);
             this.iconButtonCreateBudgetItem.TabIndex = 0;
-            this.iconButtonCreateBudgetItem.Text = "Create Budget Item";
+            this.iconButtonCreateBudgetItem.Text = "Create Goal Item";
             this.iconButtonCreateBudgetItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonCreateBudgetItem.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(574, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Sort By:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(656, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 30);
-            this.comboBox1.TabIndex = 1;
+            this.iconButtonCreateBudgetItem.Click += new System.EventHandler(this.iconButtonCreateGoalItem_Click);
             // 
             // GoalForm
             // 
@@ -137,6 +116,7 @@ namespace StocksAndFinance.Forms
             this.ClientSize = new System.Drawing.Size(877, 556);
             this.Controls.Add(this.panelGoalsMain);
             this.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GoalForm";
             this.Text = "Goals";
@@ -156,7 +136,5 @@ namespace StocksAndFinance.Forms
         private System.Windows.Forms.Label lblGoalStep;
         private System.Windows.Forms.NumericUpDown goalStepBox;
         private FontAwesome.Sharp.IconButton iconButtonCreateBudgetItem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
