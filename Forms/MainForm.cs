@@ -37,7 +37,7 @@ namespace StocksAndFinance.Forms
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Application.Exit();
+            parentLogin.Show();
         }
     }
 }
