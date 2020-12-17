@@ -13,7 +13,7 @@ namespace StocksAndFinance
 {
     public partial class CreateBudget : Form
     {
-        User currentUser;
+        public User currentUser;
         internal CreateBudget currentForm;
         public CreateBudget(User user)
         {
@@ -37,6 +37,9 @@ namespace StocksAndFinance
             if (ValidateChildren())
             {
                 DbHandler.InsertBudget(txtBudgetName.Text, cmbTimePeriod.SelectedItem.ToString().ToCharArray()[0], double.Parse(txtStartingAmount.Text, CultureInfo.InvariantCulture), double.Parse(txtBudgetAmount.Text, CultureInfo.InvariantCulture), currentUser.UserId);
+                Users.currentUser.SetBudget();
+                BudgetForm ParentForm = (BudgetForm)this.Parent.Parent;
+                ParentForm.CreateBudgetItems();
                 currentForm.Close();
             }
             BudgetForm.MainPanel.Controls.Clear();

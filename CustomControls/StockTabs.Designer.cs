@@ -38,7 +38,8 @@
             // 
             this.lblShares.AutoSize = true;
             this.lblShares.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShares.Location = new System.Drawing.Point(475, 27);
+            this.lblShares.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblShares.Location = new System.Drawing.Point(548, 27);
             this.lblShares.Name = "lblShares";
             this.lblShares.Size = new System.Drawing.Size(21, 23);
             this.lblShares.TabIndex = 7;
@@ -48,7 +49,8 @@
             // 
             this.lblSharesOwned.AutoSize = true;
             this.lblSharesOwned.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSharesOwned.Location = new System.Drawing.Point(304, 27);
+            this.lblSharesOwned.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblSharesOwned.Location = new System.Drawing.Point(377, 27);
             this.lblSharesOwned.Name = "lblSharesOwned";
             this.lblSharesOwned.Size = new System.Drawing.Size(152, 23);
             this.lblSharesOwned.TabIndex = 6;
@@ -59,7 +61,7 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.Green;
-            this.lblPrice.Location = new System.Drawing.Point(68, 47);
+            this.lblPrice.Location = new System.Drawing.Point(179, 27);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(56, 23);
             this.lblPrice.TabIndex = 5;
@@ -69,23 +71,24 @@
             // 
             this.lblSymbol.AutoSize = true;
             this.lblSymbol.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSymbol.Location = new System.Drawing.Point(68, 12);
+            this.lblSymbol.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblSymbol.Location = new System.Drawing.Point(52, 27);
             this.lblSymbol.Name = "lblSymbol";
-            this.lblSymbol.Size = new System.Drawing.Size(79, 23);
+            this.lblSymbol.Size = new System.Drawing.Size(84, 23);
             this.lblSymbol.TabIndex = 4;
-            this.lblSymbol.Text = "Symbol";
+            this.lblSymbol.Text = "Symbol:";
             // 
             // StockTabs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.Controls.Add(this.lblShares);
             this.Controls.Add(this.lblSharesOwned);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblSymbol);
             this.Name = "StockTabs";
-            this.Size = new System.Drawing.Size(564, 83);
+            this.Size = new System.Drawing.Size(700, 83);
             this.Load += new System.EventHandler(this.StockTabs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

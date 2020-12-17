@@ -56,7 +56,16 @@ namespace StocksAndFinance
             Stocks = null;
             Stocks = DbHandler.SelectStocks(UserId);
         }
-
+        public void SetBudget()
+        {
+            Budgets = null;
+            Budgets = DbHandler.SelectBudgets(UserId);
+        }
+        public void SetPortfolio()
+        {
+            PortfolioHistory = null;
+            PortfolioHistory = DbHandler.SelectPortfolioHistory(UserId);
+        }
         public double CalculatePortfolioPercentDiff(int numOfWeeks)
         {
             if (numOfWeeks > PortfolioHistory.Count)

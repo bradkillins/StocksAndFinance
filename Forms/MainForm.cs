@@ -12,8 +12,10 @@ namespace StocksAndFinance.Forms
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public Login parentLogin;
+        public MainForm(Login _parentLogin)
         {
+            this.parentLogin = _parentLogin;
             InitializeComponent();
         }
 
@@ -35,7 +37,7 @@ namespace StocksAndFinance.Forms
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            parentLogin.Show();
         }
     }
 }

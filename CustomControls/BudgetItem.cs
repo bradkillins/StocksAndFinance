@@ -112,35 +112,43 @@ namespace StocksAndFinance
             this.BackColor = Color.FromArgb(40, 40, 40);
         }
 
-        private void iconButtonPlus_Click(object sender, EventArgs e)
+        private void SendEmail(double used, double budget)
         {
-            progressValue += BudgetForm.BudgetStep;
-            DbHandler.UpdateUsedAmount(progressValue, budgetId, userId);
-            lblBudgetItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
-            CheckBudget checker = new CheckBudget();
-            //checker.budgetReachedEvent += SendEmail;
-            checker.budgetReachedEvent += PopUpBudgetReachedWarning;
-            checker.BudgetCheck(progressValue, progressMax);
+            EmailSender.SendEmail(Users.currentUser.Email, $"your budget {lblTitle} was reached, Congratulations");
         }
-        //private void SendEmail(double used, double budget)
-        //{
-
-        //}
         private void PopUpBudgetReachedWarning(double used, double budget)
         {
             MessagePrompt prompt = new MessagePrompt($"Your ${budget} budget for {lblBudgetItem.Text} this {lblTimePeriod.Text} time period has been reached!");
             prompt.Show();
         }
+        private void iconButtonPlus_Click(object sender, EventArgs e)
+        {
+            progressValue += BudgetForm.BudgetStep;
+            DbHandler.UpdateUsedAmount(progressValue, budgetId, userId);
+            Users.currentUser.Budgets = DbHandler.SelectBudgets(Users.currentUser.UserId);
+            lblBudgetItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
+            CheckBudget checker = new CheckBudget();
+            checker.budgetReachedEvent += SendEmail;
+            checker.budgetReachedEvent += PopUpBudgetReachedWarning;
+            checker.BudgetCheck(progressValue, progressMax);
+        }
         private void iconButtonMinus_Click(object sender, EventArgs e)
         {
             progressValue -= BudgetForm.BudgetStep;
             DbHandler.UpdateUsedAmount(progressValue, budgetId, userId);
+            Users.currentUser.Budgets = DbHandler.SelectBudgets(Users.currentUser.UserId);
             lblBudgetItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
         }
 
         private void iconButtonDelete_Click(object sender, EventArgs e)
         {
-           DbHandler.DeleteBudget(budgetId, userId);
+            DbHandler.DeleteBudget(budgetId, userId);
+            //update user
+            Users.currentUser.Budgets = DbHandler.SelectBudgets(Users.currentUser.UserId);
+            BudgetForm parentForm = (BudgetForm)this.Parent.Parent;
+            parentForm.CurrentUser = Users.currentUser;
+            parentForm.CreateBudgetItems();
+
             BudgetForm.MainPanel.Controls.Remove(this);
         }
 
@@ -148,6 +156,7 @@ namespace StocksAndFinance
         {
             EditBudget edit = new EditBudget(lblBudgetItem.Text, lblTimePeriod.Text, progressBarBudget.Value.ToString(), progressBarBudget.Maximum.ToString(), userId, budgetId);
             BudgetForm.CurrentBudgetForm.OpenChildForm(edit);
+            
         }
     }
 }

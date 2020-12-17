@@ -68,6 +68,10 @@
     <Compile Include="Classes\Budget.cs" />
     <Compile Include="Classes\DbHandler.cs" />
     <Compile Include="Classes\EmailSender.cs" />
+
+    <Compile Include="Classes\Goal.cs" />
+    <Compile Include="Classes\LeaderboardHelper.cs" />
+
     <Compile Include="Classes\PortfolioHistory.cs" />
     <Compile Include="Classes\Stock.cs" />
     <Compile Include="Classes\StockHistory.cs" />
@@ -91,11 +95,19 @@
     <Compile Include="CustomControls\LeaderItem.Designer.cs">
       <DependentUpon>LeaderItem.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Forms\EditGoal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\EditGoal.Designer.cs">
       <DependentUpon>EditGoal.cs</DependentUpon>
+      </Compile>
+
+    <Compile Include="CustomControls\WeeklyItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\WeeklyItem.Designer.cs">
+      <DependentUpon>WeeklyItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Leaderboard.cs">
       <SubType>Form</SubType>
@@ -138,6 +150,12 @@
     </Compile>
     <Compile Include="CustomControls\StockTabs.Designer.cs">
       <DependentUpon>StockTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LeaderboardStockView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LeaderboardStockView.Designer.cs">
+      <DependentUpon>LeaderboardStockView.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -187,12 +205,21 @@
     <Compile Include="Forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Classes\Goal.cs" />
     <Compile Include="CustomControls\GoalItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomControls\GoalItem.Designer.cs">
       <DependentUpon>GoalItem.cs</DependentUpon>
+      </Compile>
+
+    <Compile Include="Forms\WeeklyBreakdown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WeeklyBreakdown.Designer.cs">
+      <DependentUpon>WeeklyBreakdown.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -206,8 +233,14 @@
     <EmbeddedResource Include="CustomControls\LeaderItem.resx">
       <DependentUpon>LeaderItem.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Forms\EditGoal.resx">
       <DependentUpon>EditGoal.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="CustomControls\WeeklyItem.resx">
+      <DependentUpon>WeeklyItem.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Leaderboard.resx">
       <DependentUpon>Leaderboard.cs</DependentUpon>
@@ -229,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\StockTabs.resx">
       <DependentUpon>StockTabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LeaderboardStockView.resx">
+      <DependentUpon>LeaderboardStockView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -254,8 +290,14 @@
     <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="CustomControls\GoalItem.resx">
       <DependentUpon>GoalItem.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="Forms\WeeklyBreakdown.resx">
+      <DependentUpon>WeeklyBreakdown.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

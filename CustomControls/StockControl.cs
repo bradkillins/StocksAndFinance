@@ -25,22 +25,38 @@ namespace StocksAndFinance
 
         private void Stocks_Load(object sender, EventArgs e)
         {
-
-            Debug.WriteLine("the symbol is :::::: " + user.Stocks[0].Symbol);
-
-            setGraph(user.Stocks[0].Symbol);
-            setComboBox();
+            try
+            {
+                setGraph(user.Stocks[0].Symbol);
+                setComboBox();
+                this.txtShares.Text = GetStockCount();
+            }
+            catch
+            {
+                Debug.WriteLine("The User did not own any stocks, Graph will not populate");
+            }
             
-            this.txtShares.Text = GetStockCount();
+           
         }
         private string GetStockCount()
         {
-            string stockCount = user.Stocks.Find(Stock => Stock.Symbol == cmbStocks.Text).Shares.ToString();
-            Debug.WriteLine("STOCK COUNT : "+stockCount);
+            string stockCount;
+            try
+            {
+                stockCount = user.Stocks.Find(Stock => Stock.Symbol == cmbStocks.Text).Shares.ToString();
+            }
+            catch
+            {
+                Debug.WriteLine("The user did not own any stocks : stock count set to 0");
+                stockCount = "0";
+            }
             return stockCount;
         }
         private void setGraph(string Symbol)
         {
+            try
+            {
+
             //reset and set stock to symbol passed
             crtStocks.Series.Clear();
             crtStocks.Series.Add(Symbol);
@@ -61,6 +77,11 @@ namespace StocksAndFinance
 
                 }
             }
+            }
+            catch
+            {
+
+            }
         }
 
         private void setComboBox()
@@ -79,10 +100,17 @@ namespace StocksAndFinance
 
         private void btnChangeShare_Click(object sender, EventArgs e)
         {
-            if(Int32.TryParse(txtShares.Text, out int sharesNumber))
+            try
             {
-                DbHandler.ChangeStockCount(Users.currentUser.UserId, cmbStocks.Text, sharesNumber);
-                Users.currentUser.Stocks.Find(stock => stock.Symbol == cmbStocks.Text).Shares = sharesNumber;
+                if(Int32.TryParse(txtShares.Text, out int sharesNumber))
+                {
+                    DbHandler.ChangeStockCount(Users.currentUser.UserId, cmbStocks.Text, sharesNumber);
+                    Users.currentUser.Stocks.Find(stock => stock.Symbol == cmbStocks.Text).Shares = sharesNumber;
+                }
+            }
+            catch
+            {
+                Debug.WriteLine("could not load page because stock is empty");
             }
         }
 

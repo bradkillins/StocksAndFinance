@@ -31,15 +31,14 @@
             this.logoImage = new System.Windows.Forms.PictureBox();
             this.pnlProfile = new System.Windows.Forms.Panel();
             this.lblProfileName = new System.Windows.Forms.Label();
-            this.profileImage = new System.Windows.Forms.PictureBox();
             this.btnGoals = new System.Windows.Forms.Button();
             this.btnBudget = new System.Windows.Forms.Button();
             this.btnStocks = new System.Windows.Forms.Button();
             this.btnLeaderBoard = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoImage)).BeginInit();
             this.pnlProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profileImage)).BeginInit();
             this.SuspendLayout();
             // 
             // logoImage
@@ -54,36 +53,27 @@
             // pnlProfile
             // 
             this.pnlProfile.Controls.Add(this.lblProfileName);
-            this.pnlProfile.Controls.Add(this.profileImage);
-            this.pnlProfile.Location = new System.Drawing.Point(21, 606);
+            this.pnlProfile.Location = new System.Drawing.Point(3, 597);
             this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.Size = new System.Drawing.Size(200, 43);
+            this.pnlProfile.Size = new System.Drawing.Size(149, 43);
             this.pnlProfile.TabIndex = 20;
             // 
             // lblProfileName
             // 
             this.lblProfileName.AutoSize = true;
-            this.lblProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfileName.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblProfileName.Location = new System.Drawing.Point(9, 8);
             this.lblProfileName.Name = "lblProfileName";
-            this.lblProfileName.Size = new System.Drawing.Size(129, 25);
+            this.lblProfileName.Size = new System.Drawing.Size(123, 24);
             this.lblProfileName.TabIndex = 1;
             this.lblProfileName.Text = "ProfileName";
-            // 
-            // profileImage
-            // 
-            this.profileImage.Location = new System.Drawing.Point(160, 0);
-            this.profileImage.Name = "profileImage";
-            this.profileImage.Size = new System.Drawing.Size(37, 37);
-            this.profileImage.TabIndex = 0;
-            this.profileImage.TabStop = false;
             // 
             // btnGoals
             // 
             this.btnGoals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(115)))), ((int)(((byte)(131)))));
             this.btnGoals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoals.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Italic);
+            this.btnGoals.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnGoals.Location = new System.Drawing.Point(0, 486);
             this.btnGoals.Name = "btnGoals";
             this.btnGoals.Size = new System.Drawing.Size(242, 105);
@@ -97,7 +87,7 @@
             // 
             this.btnBudget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(115)))), ((int)(((byte)(131)))));
             this.btnBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBudget.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Italic);
+            this.btnBudget.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnBudget.Location = new System.Drawing.Point(0, 385);
             this.btnBudget.Name = "btnBudget";
             this.btnBudget.Size = new System.Drawing.Size(242, 105);
@@ -111,7 +101,7 @@
             // 
             this.btnStocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(115)))), ((int)(((byte)(131)))));
             this.btnStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStocks.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Italic);
+            this.btnStocks.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnStocks.Location = new System.Drawing.Point(0, 286);
             this.btnStocks.Name = "btnStocks";
             this.btnStocks.Size = new System.Drawing.Size(242, 105);
@@ -125,7 +115,7 @@
             // 
             this.btnLeaderBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(115)))), ((int)(((byte)(131)))));
             this.btnLeaderBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLeaderBoard.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Italic);
+            this.btnLeaderBoard.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnLeaderBoard.Location = new System.Drawing.Point(0, 185);
             this.btnLeaderBoard.Name = "btnLeaderBoard";
             this.btnLeaderBoard.Size = new System.Drawing.Size(242, 105);
@@ -139,7 +129,7 @@
             // 
             this.btnUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(115)))), ((int)(((byte)(131)))));
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUser.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUser.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnUser.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnUser.Location = new System.Drawing.Point(0, 83);
             this.btnUser.Name = "btnUser";
@@ -150,11 +140,25 @@
             this.btnUser.UseVisualStyleBackColor = false;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(115)))), ((int)(((byte)(131)))));
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(159, 597);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(80, 50);
+            this.btnLogOut.TabIndex = 21;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // HomeButtonControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.logoImage);
             this.Controls.Add(this.pnlProfile);
             this.Controls.Add(this.btnGoals);
@@ -168,7 +172,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoImage)).EndInit();
             this.pnlProfile.ResumeLayout(false);
             this.pnlProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profileImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,11 +181,11 @@
         private System.Windows.Forms.PictureBox logoImage;
         private System.Windows.Forms.Panel pnlProfile;
         private System.Windows.Forms.Label lblProfileName;
-        private System.Windows.Forms.PictureBox profileImage;
         private System.Windows.Forms.Button btnGoals;
         private System.Windows.Forms.Button btnBudget;
         private System.Windows.Forms.Button btnStocks;
         private System.Windows.Forms.Button btnLeaderBoard;
         private System.Windows.Forms.Button btnUser;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

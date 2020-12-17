@@ -25,9 +25,7 @@ namespace StocksAndFinance.CustomControls
         {
             pnlProfile.BorderStyle = BorderStyle.Fixed3D;
             Debug.WriteLine("my current directory is : " + Directory.GetCurrentDirectory() + "this is the end");
-            //profile image
-            profileImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            profileImage.Image = Image.FromFile("../../Resources/default.png");
+
             //Profile Name
             lblProfileName.Text = Users.currentUser.Name;
             //top logo
@@ -74,10 +72,12 @@ namespace StocksAndFinance.CustomControls
             this.btnGoals.Enabled = true;
             this.btnLeaderBoard.Enabled = true;
             this.btnStocks.Enabled = true;
+
         }
         private void btnLeaderBoard_Click(object sender, EventArgs e)
         {
             resetButtons();
+            Users.currentUser.SetPortfolio();
             Button leaderboardButton = new Button();
             //disable this button
             leaderboardButton.Enabled = false;
@@ -92,18 +92,38 @@ namespace StocksAndFinance.CustomControls
         private void btnBudget_Click(object sender, EventArgs e)
         {
             resetButtons();
-            Button budgetButton = new Button();
-            //disable this button
-            budgetButton.Enabled = false;
-            //change main panel to stocks.
-            BudgetForm budgetForm = new BudgetForm();
-            budgetForm.TopLevel = false;
-            budgetForm.AutoScroll = true;
-            mainForm.SetMainpnl(budgetForm);
+            if(Users.currentUser.Type == 'P')
+            {
+                Button budgetButton = new Button();
+                //disable this button
+                budgetButton.Enabled = false;
+                //change main panel to stocks.
+                BudgetForm budgetForm = new BudgetForm();
+                budgetForm.TopLevel = false;
+                budgetForm.AutoScroll = true;
+                mainForm.SetMainpnl(budgetForm);
+            }
+            else
+            {
+                MessagePrompt prompt = new MessagePrompt("Sorry but Free users don't have access.\nUpgrade please :)");
+                prompt.StartPosition = FormStartPosition.CenterParent;
+                prompt.ShowDialog();
+                resetButtons();
+            }
+
         }
 
         private void btnGoals_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+            mainForm.Close();
+            
+
 
         }
     }

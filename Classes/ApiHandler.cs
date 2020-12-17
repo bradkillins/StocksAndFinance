@@ -19,6 +19,7 @@ namespace StocksAndFinance
         static string apiToken = "?token=Tpk_568a99b487ff4ade901ef1b249601992";
         //Example path  = https://sandbox.iexapis.com/stable/stock/IBM/chart/1y?token=Tpk_568a99b487ff4ade901ef1b249601992
 
+        //Note: sending a api request with 1 doesn't return "unknown  Symbol Error" on the API side, it is an error bug on iexapis's side.
         public static async Task<List<StockHistory>> GetStockData(string symbol)
         {
             //slow down api calls as to not get "429 - too many request" error
