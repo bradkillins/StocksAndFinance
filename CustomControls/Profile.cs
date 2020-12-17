@@ -38,7 +38,8 @@ namespace StocksAndFinance.CustomControls
             int height = 0;
             foreach (Stock stock in currentUser.Stocks)
             {
-                StockTabs newTab = new StockTabs(stock.Symbol, 100.00, stock.Shares);
+                double stockPriceToday = stock.History[stock.History.Count-1].Price;
+                StockTabs newTab = new StockTabs(stock.Symbol, stockPriceToday, stock.Shares);
                 newTab.Location = new Point(0, height);
                 pnlStocks.Controls.Add(newTab);
                 height += 85;

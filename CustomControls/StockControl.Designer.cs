@@ -107,13 +107,10 @@
             // 
             this.cmbStocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(115)))), ((int)(((byte)(131)))));
             this.cmbStocks.FormattingEnabled = true;
-            this.cmbStocks.Items.AddRange(new object[] {
-            "IBM"});
             this.cmbStocks.Location = new System.Drawing.Point(150, 339);
             this.cmbStocks.Name = "cmbStocks";
             this.cmbStocks.Size = new System.Drawing.Size(139, 21);
             this.cmbStocks.TabIndex = 31;
-            this.cmbStocks.Text = "IBM";
             this.cmbStocks.SelectedIndexChanged += new System.EventHandler(this.cmbStocks_SelectedIndexChanged);
             // 
             // lblAddStock
