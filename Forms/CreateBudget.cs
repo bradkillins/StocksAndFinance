@@ -13,7 +13,7 @@ namespace StocksAndFinance
 {
     public partial class CreateBudget : Form
     {
-        User currentUser;
+        public User currentUser;
         internal CreateBudget currentForm;
         public CreateBudget(User user)
         {

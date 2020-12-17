@@ -70,8 +70,10 @@ namespace StocksAndFinance.CustomControls
             this.btnBudget.Enabled = true;
             this.btnUser.Enabled = true;
             this.btnGoals.Enabled = true;
+
             this.btnLeaderBoard.Enabled = true;
             this.btnStocks.Enabled = true;
+
         }
         private void btnLeaderBoard_Click(object sender, EventArgs e)
         {
