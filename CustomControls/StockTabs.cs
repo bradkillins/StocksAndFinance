@@ -25,7 +25,7 @@ namespace StocksAndFinance.CustomControls
 
         private void StockTabs_Load(object sender, EventArgs e)
         {
-            lblPrice.Text = this.price.ToString();
+            lblPrice.Text = $"${price}/share";
             lblSymbol.Text = this.symbol;
             lblShares.Text = this.shares.ToString();
         }

@@ -119,6 +119,7 @@ namespace StocksAndFinance
         private void PopUpBudgetReachedWarning(double used, double budget)
         {
             MessagePrompt prompt = new MessagePrompt($"Your ${budget} budget for {lblBudgetItem.Text} this {lblTimePeriod.Text} time period has been reached!");
+            prompt.StartPosition = FormStartPosition.CenterParent;
             prompt.Show();
         }
         private void iconButtonPlus_Click(object sender, EventArgs e)

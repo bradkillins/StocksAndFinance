@@ -65,7 +65,31 @@
             this.budgetStepBox.Name = "budgetStepBox";
             this.budgetStepBox.Size = new System.Drawing.Size(68, 26);
             this.budgetStepBox.TabIndex = 3;
+            this.budgetStepBox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.budgetStepBox.ValueChanged += new System.EventHandler(this.budgetStep_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(574, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Sort By:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(656, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(216, 28);
+            this.comboBox1.TabIndex = 1;
             // 
             // iconButtonCreateBudgetItem
             // 
