@@ -101,7 +101,7 @@ namespace StocksAndFinance
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnectString))
             {
-                dbConnection.Execute($"UPDATE Budgets SET Name = @budgetTitle, TimePeriod = @timePeriod, UsedAmount = @usedAmount, BudgetAmount = budgetAmount, UserId = @userId WHERE UserId = @userId AND BudgetId = @budgetId", new { budgetTitle, timePeriod, usedAmount, budgetAmount, userId, budgetId });
+                dbConnection.Execute($"UPDATE Budgets SET Name = @budgetTitle, TimePeriod = @timePeriod, UsedAmount = @usedAmount, BudgetAmount = @budgetAmount, UserId = @userId WHERE UserId = @userId AND BudgetId = @budgetId", new { budgetTitle, timePeriod, usedAmount, budgetAmount, userId, budgetId });
             }
         }
         public static void DeleteBudget(int budgetId, int userId)

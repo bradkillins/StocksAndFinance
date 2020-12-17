@@ -43,10 +43,16 @@ namespace StocksAndFinance.Forms
             if (ValidateChildren())
             {
                 DbHandler.UpdateBudget(txtBudgetName.Text, cmbTimePeriod.SelectedItem.ToString().ToCharArray()[0], double.Parse(txtUsedAmount.Text), double.Parse(txtBudgetAmount.Text), currentUserId, currentBudgetId);
+                //update user
+                Users.currentUser.Budgets = DbHandler.SelectBudgets(Users.currentUser.UserId);
+                BudgetForm parentForm = (BudgetForm)this.Parent.Parent;
+                parentForm.CurrentUser = Users.currentUser;
+                parentForm.CreateBudgetItems();
+
                 currentForm.Close();
             }
-            BudgetForm.MainPanel.Controls.Clear();
-            BudgetForm.CurrentBudgetForm.CreateBudgetItems();
+
+            
         }
     }
 }

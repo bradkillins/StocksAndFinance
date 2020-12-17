@@ -17,7 +17,7 @@ namespace StocksAndFinance
         public static Panel MainPanel;
         public static int BudgetStep;
         private Form CurrentChildForm;
-        private User CurrentUser;
+        public User CurrentUser;
         public BudgetForm()
         {
             InitializeComponent();
