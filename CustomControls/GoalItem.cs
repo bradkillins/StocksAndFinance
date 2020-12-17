@@ -112,19 +112,14 @@ namespace StocksAndFinance
             lblGoalItemAmount.Text = "$" + progressValue.ToString() + " of $" + progressMax.ToString();
             CheckGoal checker = new CheckGoal();
 
-            checker.goalReachedEvent += PopUpGoalReachedWarning;
+
             checker.GoalCheck(progressValue, progressMax);
         }
         //private void SendEmail(double used, double goal)
         //{
 
         //}
-        private void PopUpGoalReachedWarning(double used, double goal)
-        {
-            MessagePrompt prompt = new MessagePrompt($"You have reached your financial goal of ${goal} for {lblGoalItem.Text}!");
-            prompt.StartPosition = FormStartPosition.CenterParent;
-            prompt.Show();
-        }
+ 
         private void iconButtonMinus_Click(object sender, EventArgs e)
         {
             progressValue -= GoalForm.GoalStep;

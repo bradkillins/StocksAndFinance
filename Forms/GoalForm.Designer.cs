@@ -34,8 +34,6 @@ namespace StocksAndFinance.Forms
             this.panelTopBar = new System.Windows.Forms.Panel();
             this.lblGoalStep = new System.Windows.Forms.Label();
             this.goalStepBox = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.iconButtonCreateBudgetItem = new FontAwesome.Sharp.IconButton();
             this.panelGoalsMain.SuspendLayout();
             this.panelTopBar.SuspendLayout();
@@ -94,25 +92,7 @@ namespace StocksAndFinance.Forms
             0,
             0,
             0});
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(574, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Sort By:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(656, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 26);
-            this.comboBox1.TabIndex = 1;
+            this.goalStepBox.ValueChanged += new System.EventHandler(this.goalStep_ValueChanged);
             // 
             // iconButtonCreateBudgetItem
             // 
@@ -132,6 +112,7 @@ namespace StocksAndFinance.Forms
             this.iconButtonCreateBudgetItem.Text = "Create Goal Item";
             this.iconButtonCreateBudgetItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonCreateBudgetItem.UseVisualStyleBackColor = true;
+            this.iconButtonCreateBudgetItem.Click += new System.EventHandler(this.iconButtonCreateGoalItem_Click);
             // 
             // GoalForm
             // 
