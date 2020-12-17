@@ -35,8 +35,8 @@ namespace StocksAndFinance
                 {
                     this.Hide();
                     Forms.MainForm MainPage = new Forms.MainForm(this);
+                    MainPage.StartPosition = FormStartPosition.CenterParent;
                     MainPage.ShowDialog();
-
                 }
                 else
                 {

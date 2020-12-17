@@ -90,14 +90,25 @@ namespace StocksAndFinance.CustomControls
         private void btnBudget_Click(object sender, EventArgs e)
         {
             resetButtons();
-            Button budgetButton = new Button();
-            //disable this button
-            budgetButton.Enabled = false;
-            //change main panel to stocks.
-            BudgetForm budgetForm = new BudgetForm();
-            budgetForm.TopLevel = false;
-            budgetForm.AutoScroll = true;
-            mainForm.SetMainpnl(budgetForm);
+            if(Users.currentUser.Type == 'P')
+            {
+                Button budgetButton = new Button();
+                //disable this button
+                budgetButton.Enabled = false;
+                //change main panel to stocks.
+                BudgetForm budgetForm = new BudgetForm();
+                budgetForm.TopLevel = false;
+                budgetForm.AutoScroll = true;
+                mainForm.SetMainpnl(budgetForm);
+            }
+            else
+            {
+                MessagePrompt prompt = new MessagePrompt("Sorry but Free users don't have access.\nUpgrade please :)");
+                prompt.StartPosition = FormStartPosition.CenterParent;
+                prompt.ShowDialog();
+                resetButtons();
+            }
+
         }
 
         private void btnGoals_Click(object sender, EventArgs e)
