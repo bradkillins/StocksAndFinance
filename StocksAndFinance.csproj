@@ -68,12 +68,17 @@
     <Compile Include="Classes\Budget.cs" />
     <Compile Include="Classes\DbHandler.cs" />
     <Compile Include="Classes\EmailSender.cs" />
-    <Compile Include="Classes\Goal.cs" />
     <Compile Include="Classes\PortfolioHistory.cs" />
     <Compile Include="Classes\Stock.cs" />
     <Compile Include="Classes\StockHistory.cs" />
     <Compile Include="Classes\Users.cs" />
     <Compile Include="Classes\Validators.cs" />
+    <Compile Include="Forms\CreateGoal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateGoal.Designer.cs">
+      <DependentUpon>CreateGoal.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\BudgetItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -85,6 +90,12 @@
     </Compile>
     <Compile Include="CustomControls\LeaderItem.Designer.cs">
       <DependentUpon>LeaderItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditGoal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditGoal.Designer.cs">
+      <DependentUpon>EditGoal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Leaderboard.cs">
       <SubType>Form</SubType>
@@ -158,11 +169,11 @@
     <Compile Include="Forms\EditBudget.Designer.cs">
       <DependentUpon>EditBudget.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\GoalsForm.cs">
+    <Compile Include="Forms\GoalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\GoalsForm.Designer.cs">
-      <DependentUpon>GoalsForm.cs</DependentUpon>
+    <Compile Include="Forms\GoalForm.Designer.cs">
+      <DependentUpon>GoalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -176,14 +187,27 @@
     <Compile Include="Forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Goal.cs" />
+    <Compile Include="CustomControls\GoalItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\GoalItem.Designer.cs">
+      <DependentUpon>GoalItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\User.cs" />
+    <EmbeddedResource Include="Forms\CreateGoal.resx">
+      <DependentUpon>CreateGoal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\BudgetItem.resx">
       <DependentUpon>BudgetItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\LeaderItem.resx">
       <DependentUpon>LeaderItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditGoal.resx">
+      <DependentUpon>EditGoal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Leaderboard.resx">
       <DependentUpon>Leaderboard.cs</DependentUpon>
@@ -221,14 +245,17 @@
     <EmbeddedResource Include="Forms\EditBudget.resx">
       <DependentUpon>EditBudget.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GoalsForm.resx">
-      <DependentUpon>GoalsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\GoalForm.resx">
+      <DependentUpon>GoalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\GoalItem.resx">
+      <DependentUpon>GoalItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -149,5 +149,25 @@ namespace StocksAndFinance
             }
         }
 
+        public static void GoalAmountValidating(object sender, CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (String.IsNullOrEmpty(textBox.Text))
+            {
+                error.SetError(textBox, "Goal Amount field cannot be empty.");
+                e.Cancel = true;
+            }
+            else if (!double.TryParse(textBox.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out double result))
+            {
+                error.SetError(textBox, "Goal Amount field must be a valid monetary value.");
+                e.Cancel = true;
+            }
+            else
+            {
+                error.SetError(textBox, String.Empty);
+                e.Cancel = false;
+            }
+        }
+
     }
 }

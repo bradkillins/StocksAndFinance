@@ -139,5 +139,34 @@ namespace StocksAndFinance
                 dbConnection.Execute($"INSERT INTO dbo.Stocks (Symbol,Shares,UserId) Values( '{symbol}', {shares},{userID} )");
             }
         }
+
+        public static void InsertGoal(string goalTitle, DateTime dueDate, double savedAmount, double goalAmount, string description, int userId)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectString))
+            {
+                dbConnection.Execute($"INSERT INTO Goals(Name, DueDate, GoalProgress, GoalAmount, Description, UserId) VALUES(@goalTitle, @timePeriod, @savedAmount, @goalAmount, @description, @userId)", new { goalTitle, dueDate, savedAmount, goalAmount, description, userId });
+            }
+        }
+        public static void UpdateSavedAmount(double savedAmount, int budgetId, int userId)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectString))
+            {
+                dbConnection.Execute($"UPDATE Goals SET UsedAmount=@usedAmount WHERE UserId = @userId AND GoalId = @goalId", new { savedAmount, budgetId, userId });
+            }
+        }
+        public static void UpdateGoal(string goalTitle, DateTime dueDate, double savedAmount, double goalAmount, string description, int userId, int goalId)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectString))
+            {
+                dbConnection.Execute($"UPDATE Goals SET Name = @goalTitle, DueDate = @timePeriod, GoalProgress = @savedAmount, GoalAmount = @goalAmount, Description = @description, UserId = @userId WHERE UserId = @userId AND GoalId = @goalId", new { goalTitle, dueDate, savedAmount, goalAmount, userId, goalId });
+            }
+        }
+        public static void DeleteGoal(int goalId, int userId)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectString))
+            {
+                dbConnection.Execute($"DELETE FROM Goals WHERE UserId = @userId AND GoalId = @goalId", new { goalId, userId });
+            }
+        }
     }
 }
