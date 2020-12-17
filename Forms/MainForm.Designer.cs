@@ -55,6 +55,7 @@
             this.Controls.Add(this.pnlMaincontent);
             this.Controls.Add(this.pnlWidget);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Stocks and Finance";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

@@ -59,7 +59,7 @@
             this.lblBudgetStep.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblBudgetStep.Location = new System.Drawing.Point(351, 52);
             this.lblBudgetStep.Name = "lblBudgetStep";
-            this.lblBudgetStep.Size = new System.Drawing.Size(143, 22);
+            this.lblBudgetStep.Size = new System.Drawing.Size(118, 18);
             this.lblBudgetStep.TabIndex = 4;
             this.lblBudgetStep.Text = "Set Budget Step";
             // 
@@ -67,8 +67,13 @@
             // 
             this.budgetStepBox.Location = new System.Drawing.Point(500, 47);
             this.budgetStepBox.Name = "budgetStepBox";
-            this.budgetStepBox.Size = new System.Drawing.Size(68, 30);
+            this.budgetStepBox.Size = new System.Drawing.Size(68, 26);
             this.budgetStepBox.TabIndex = 3;
+            this.budgetStepBox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.budgetStepBox.ValueChanged += new System.EventHandler(this.budgetStep_ValueChanged);
             // 
             // label1
@@ -78,7 +83,7 @@
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(574, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 22);
+            this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Sort By:";
             // 
@@ -87,7 +92,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(656, 46);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 33);
+            this.comboBox1.Size = new System.Drawing.Size(216, 28);
             this.comboBox1.TabIndex = 1;
             // 
             // iconButtonCreateBudgetItem
